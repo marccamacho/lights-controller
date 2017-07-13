@@ -17,13 +17,15 @@ import { AppRoutingModule }         from './app.routing'; // Routing
 // Services
 import { DataConfigService }        from './services/data-config';
 import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConfigOutputComponent,
     ConfigOutputsComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
