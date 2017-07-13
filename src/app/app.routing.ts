@@ -13,7 +13,9 @@ const appRoutes: Routes = [
     { path: 'control',      component: ControlComponent },
     { path: 'outputs',      component: ConfigOutputsComponent },
     { path: 'programable',  component: ProgramableComponent },
-    { path: 'makers',       component: MakersComponent }
+    { path: 'makers',       component: MakersComponent },
+    { path: '404',          redirectTo: ''},
+    { path: '**',           redirectTo: ''}
 ];
 
 @NgModule({
