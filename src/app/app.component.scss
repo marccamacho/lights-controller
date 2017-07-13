@@ -29,8 +29,33 @@
 }
 
 .custom-nav a:hover{
-    background: #5f5fc4;
+    background: #5f5fc4 !important;
     color:white;
+}
+
+// MARC STYLES
+//
+// .custom-nav a{
+//     margin:10px;
+//     border-radius:5px;
+//     margin: 10px;
+//     border-bottom-width: thin;
+//     border-bottom-style: solid;
+//     border-bottom-color:#fff;
+// }
+//
+// .custom-nav a:hover{
+//     border-bottom-color: #ff1744;
+//     border-bottom-width: thin;
+//     border-bottom-style: solid;
+//     background: none;
+//     color:#ff1744;
+// }
+
+.mat-list-item-focus{
+    // background: rgba(255,23,68,0.04)!important;
+    // color:#ff1744;
+    background: none !important;
 }
 
 // CONTENT STYLES
