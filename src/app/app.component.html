@@ -1,1 +1,22 @@
-<login> </login>
+<md-sidenav-container>
+
+    <!-- SIDENAV CONTENT -->
+    <md-sidenav #sidenav style="width:500px;">
+        <md-nav-list>
+            <a md-list-item routerLink="" (click)="sidenav.toggle()">Configuració</a>
+            <a md-list-item routerLink="/config-outputs" (click)="sidenav.toggle()">Configuració Output</a>
+        </md-nav-list>
+    </md-sidenav>
+
+    <!-- REST OF PAGE CONTENT -->
+    <md-toolbar color="primary" class="custom-toolbar">
+        <button md-icon-button (click)="sidenav.toggle()">
+          <md-icon class="md-24" >menu</md-icon>
+        </button>￼
+        <span> CONFIGURACIÓ </span>
+    </md-toolbar>
+
+    <router-outlet></router-outlet>
+
+    <app-footer> </app-footer>
+</md-sidenav-container>
