@@ -16,7 +16,11 @@ export class ConfigOutputsComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.dataService.currentPage = "CONFIGURACIÓ DE LES SORTIDES"
+    }
 
+    ngOnDestroy(){
+        this.dataService.currentPage = ""
     }
 
     get data():string {

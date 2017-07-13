@@ -18,6 +18,9 @@ import { AppRoutingModule }         from './app.routing'; // Routing
 import { DataConfigService }        from './services/data-config';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProgramableComponent } from './components/programable/programable.component';
+import { MakersComponent } from './components/makers/makers.component';
+import { ControlComponent } from './components/control/control.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { LoginComponent } from './components/login/login.component';
     ConfigOutputComponent,
     ConfigOutputsComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    ProgramableComponent,
+    MakersComponent,
+    ControlComponent
   ],
   imports: [
     BrowserModule,

@@ -1,42 +1,51 @@
-
-.custom-toolbar{
-    font-weight: 400;
+// TOOLBAR STYLES
+.title-toolbar{
+    font-weight: 300;
+    margin-left: 10px;
 }
 
-.custom-nav{
-        padding: 0;
-        margin: 0;
+// SIDENAV STYLES
+.container-sidenav {
+    width: 300px;
 }
 
 .title-nav{
-        text-align: center;
-        margin: 10px;
-        font-size: 18px;
-        margin-top: 20px;
-        margin-bottom: 20px;
+    text-align: center;
+    margin: 10px;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-mat-list-item{
-        margin: 10px;
+.custom-nav{
+    padding: 0;
+    margin: 0;
 }
 
 .custom-nav a{
-        margin:10px;
-        border-radius:5px;
+    margin:10px;
+    border-radius:5px;
+    margin: 10px;
 }
 
 .custom-nav a:hover{
-        background: #5f5fc4;
-        color:white;
+    background: #5f5fc4;
+    color:white;
 }
 
-.custom-sidenav {
-        width: 300px;
+// CONTENT STYLES
+.container-content{
+    margin: 20px;
+    align-items: center;
+    justify-content:center;
+    display: flex;
+    height:calc(100% - 134px);
 }
 
+// STUFF STYLES
 .text-icon-container {
-        align-items: center;
-        justify-content:center;
-        display: flex;
-        width:100%;
+    align-items: center;
+    justify-content:center;
+    display: flex;
+    width:100%;
 }

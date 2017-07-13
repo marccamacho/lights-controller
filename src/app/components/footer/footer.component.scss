@@ -1,20 +1,26 @@
 .custom-footer{
-    background-color:#283593;
-    position: absolute;
-    right: 0;
+    position: fixed;
     bottom: 0;
-    left: 0;
+    width:100%;
+    background-color:#283593;
     color:#fff;
-    font-weight: 100;
-    height: 22px;
+    font-weight: 400;
 }
 
-.custom-footer p{
-    margin: 4px;
+.footer-text{
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
 }
 
+.container-text {
+    // Center icons and text vertically
+    height:30px;
+    align-items: center;
+    display: flex;
+    margin-left: 15px;
+}
+
 .custom-footer i{
+    margin-right: 5px;
     font-size: 12px;
 }

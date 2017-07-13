@@ -5,6 +5,7 @@ export class DataConfigService {
 
     serverIP    : string = "";  // Server IP
     data        : any;          // Configuration data in JSON format. See README.md.
+    currentPage : string = "TAULA DE CONTROL";
 
     constructor() {
         if (this.serverIP == "") {
