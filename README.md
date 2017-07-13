@@ -39,3 +39,9 @@ Permetrà configurar tots els elements connectats a la taula de llums. Tindrà e
 ### [conf-output] - Configuració d'una sortida.
 - Permetrà configurar una sortida de tipus [Element]. El component tindrà:
     - @Input <el> de tipus element.
+    
+    
+<h1>Web del projecte</h1>
+
+<h2><a href="http://35.197.198.182/">http://35.197.198.182/</a></font></h2>
+    
