@@ -1,4 +1,42 @@
 
 .custom-toolbar{
-    font-weight: 300;
+    font-weight: 400;
+}
+
+.custom-nav{
+        padding: 0;
+        margin: 0;
+}
+
+.title-nav{
+        text-align: center;
+        margin: 10px;
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+}
+
+mat-list-item{
+        margin: 10px;
+}
+
+.custom-nav a{
+        margin:10px;
+        border-radius:5px;
+}
+
+.custom-nav a:hover{
+        background: #5f5fc4;
+        color:white;
+}
+
+.custom-sidenav {
+        width: 300px;
+}
+
+.text-icon-container {
+        align-items: center;
+        justify-content:center;
+        display: flex;
+        width:100%;
 }
