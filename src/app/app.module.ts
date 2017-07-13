@@ -18,12 +18,12 @@ import { AppRoutingModule }         from './app.routing'; // Routing
 
 // Services
 import { DataConfigService }        from './services/data-config';
-import { FooterComponent } from './components/footer/footer.component';
-import { LoginComponent } from './components/login/login.component';
-import { ProgramableComponent } from './components/programable/programable.component';
-import { MakersComponent } from './components/makers/makers.component';
-import { ControlComponent } from './components/control/control.component';
-import { GetKeysPipe } from './pipes/get-keys.pipe';
+import { FooterComponent }          from './components/footer/footer.component';
+import { LoginComponent }           from './components/login/login.component';
+import { ProgramableComponent }     from './components/programable/programable.component';
+import { MakersComponent }          from './components/makers/makers.component';
+import { ControlComponent }         from './components/control/control.component';
+import { GetKeysPipe }              from './pipes/get-keys.pipe';
 
 @NgModule({
   declarations: [
