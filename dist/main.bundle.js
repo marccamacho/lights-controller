@@ -191,7 +191,9 @@ var appRoutes = [
     { path: 'control', component: __WEBPACK_IMPORTED_MODULE_5__components_control_control_component__["a" /* ControlComponent */] },
     { path: 'outputs', component: __WEBPACK_IMPORTED_MODULE_2__components_config_outputs_config_outputs_component__["a" /* ConfigOutputsComponent */] },
     { path: 'programable', component: __WEBPACK_IMPORTED_MODULE_3__components_programable_programable_component__["a" /* ProgramableComponent */] },
-    { path: 'makers', component: __WEBPACK_IMPORTED_MODULE_4__components_makers_makers_component__["a" /* MakersComponent */] }
+    { path: 'makers', component: __WEBPACK_IMPORTED_MODULE_4__components_makers_makers_component__["a" /* MakersComponent */] },
+    { path: '404', redirectTo: '' },
+    { path: '**', redirectTo: '' }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
