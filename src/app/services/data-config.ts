@@ -4,19 +4,19 @@ import { Injectable } from '@angular/core';
 export class DataConfigService {
 
     serverIP    : string = "";  // Server IP
-    data        : any;          // Configuration data in JSON format. See README.md.
+    dataConfig  : any;          // Configuration data in JSON format. See README.md.
     currentPage : string = "TAULA DE CONTROL";
 
     constructor() {
         if (this.serverIP == "") {
-            this.data = {
+            this.dataConfig = {
                         typeTags: ["LED RGB 50W", "LED blau 50W", "LED blanc 50W"],
                         conf: {
                             out_16: {}, out_17: {}, out_18: {}
                         }
             }
         } else {
-            this.data = this.getRemoteConfig();
+            this.dataConfig = this.getRemoteConfig();
         }
     }
 

@@ -1,0 +1,20 @@
+<h1> Configuració d'una sortida </h1>
+
+<form>
+    <md-select placeholder="Tipus de sortida" [(ngModel)]="device.typeTag" name="tag">
+        <md-option *ngFor="let type of dataConfig.typeTags" [value]="type">
+            {{type}}
+        </md-option>
+    </md-select>
+
+    <md-select placeholder="Pins" [(ngModel)]="device.outputPin" name="pin">
+        <md-option *ngFor="let pin of dataConfig.conf | getKeys" [value]="pin">
+            {{pin}}
+        </md-option>
+    </md-select>
+
+    <p> Selected value: {{device.typeTag}} </p>
+    <p> Selected value: {{device.outputPin}} </p>
+</form>
+
+<button md-button (click)="closeDialog()">Option 1</button>
