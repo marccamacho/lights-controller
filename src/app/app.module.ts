@@ -11,7 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import 'hammerjs';
 
 // Components inputs
-import { ConfigOutputComponent }    from './components/config-output/config-output.component';
+import { OutputComponent }          from './components/output/output.component';
 import { ConfigOutputsComponent }   from './components/config-outputs/config-outputs.component';
 import { DialogConfigComponent }    from './components/config-outputs/config-outputs.component';
 import { AppRoutingModule }         from './app.routing'; // Routing
@@ -28,7 +28,7 @@ import { GetKeysPipe }              from './pipes/get-keys.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    ConfigOutputComponent,
+    OutputComponent,
     ConfigOutputsComponent,
     FooterComponent,
     LoginComponent,

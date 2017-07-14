@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConfigOutputComponent } from './config-output.component';
+import { OutputComponent } from './output.component';
 
 describe('ConfigOutputComponent', () => {
-  let component: ConfigOutputComponent;
-  let fixture: ComponentFixture<ConfigOutputComponent>;
+  let component: OutputComponent;
+  let fixture: ComponentFixture<OutputComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConfigOutputComponent ]
+      declarations: [ OutputComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ConfigOutputComponent);
+    fixture = TestBed.createComponent(OutputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

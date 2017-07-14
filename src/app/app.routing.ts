@@ -1,7 +1,7 @@
 import { NgModule }                 from '@angular/core';
 import { Routes, RouterModule }     from '@angular/router';
 
-import { ConfigOutputComponent }    from './components/config-output/config-output.component';
+import { OutputComponent }    from './components/output/output.component';
 import { ConfigOutputsComponent }   from './components/config-outputs/config-outputs.component';
 import { ProgramableComponent }     from './components/programable/programable.component';
 import { MakersComponent }          from './components/makers/makers.component';
