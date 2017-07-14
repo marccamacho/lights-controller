@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {OutputDevice} from '../../classes/output-device';
+
+declare var $:any;
 
 @Component({
   selector: 'config-output',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigOutputComponent implements OnInit {
 
+  ngOnInit() {
+    console.log("entro");
+}
+
+  showcrelement(){
+    $('.crelement2').slideToggle(400);
+  }
+
+
+  @Input() dev= new OutputDevice(null,null,null,null);
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  
 
 }

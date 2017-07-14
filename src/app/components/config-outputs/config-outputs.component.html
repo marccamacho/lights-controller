@@ -1,3 +1,9 @@
-<button md-fab (click)="open()"> <i class="material-icons">add</i> </button>
-<p> Selected value: {{currentDevice.typeTag}} </p>
-<p> Selected value: {{currentDevice.outputPin}} </p>
+<div class="add">
+    <button md-fab (click)="open()" > <i class="material-icons">add</i> </button>
+</div>
+
+<div *ngFor="let device of data.conf | getKeys">
+    <div *ngIf="device.typeTag">
+         <config-output [dev]="device"></config-output>  
+    </div>
+</div>

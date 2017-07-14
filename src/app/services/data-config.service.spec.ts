@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { ConfigDataService } from './config-data.service';
+import { DataConfigService } from './data-config';
 
 describe('ConfigDataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ConfigDataService]
+      providers: [DataConfigService]
     });
   });
 
-  it('should be created', inject([ConfigDataService], (service: ConfigDataService) => {
+  it('should be created', inject([DataConfigService], (service: DataConfigService) => {
     expect(service).toBeTruthy();
   }));
 });

@@ -10,9 +10,32 @@ export class DataConfigService {
     constructor() {
         if (this.serverIP == "") {
             this.dataConfig = {
-                        typeTags: ["LED RGB 50W", "LED blau 50W", "LED blanc 50W"],
+                        typeTags: ["LED", "Fan", "Light Bulb", "Speaker"],
                         conf: {
-                            out_16: {}, out_17: {}, out_18: {}
+                            out_3:{},
+                            out_5:{},
+                            out_7:{},
+                            out_11:{},
+                            out_12:{},
+                            out_13:{},
+                            out_15:{},
+                            out_16:{},
+                            out_18:{},
+                            out_19:{},
+                            out_21:{},
+                            out_22:{},
+                            out_23:{},
+                            out_24:{},
+                            out_26:{},
+                            out_29:{},
+                            out_31:{},
+                            out_32:{},
+                            out_33:{},
+                            out_35:{},
+                            out_36:{},
+                            out_37:{},
+                            out_38:{},
+                            out_40:{}   
                         }
             }
         } else {
