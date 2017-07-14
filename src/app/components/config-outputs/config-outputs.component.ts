@@ -1,7 +1,7 @@
 import { Component, OnInit }    from '@angular/core';
 import { OutputDevice }         from '../../classes/output-device'
 
-import { ConfigOutputComponent }  from '../config-output/config-output.component';
+import { OutputComponent }  from '../output/output.component';
 
 import { DataConfigService }    from '../../services/data-config';
 import { GetKeysPipe }          from '../../pipes/get-keys.pipe';
