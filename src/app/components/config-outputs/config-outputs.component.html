@@ -6,6 +6,7 @@
     <div *ngFor="let device of data.conf | getKeys" class="icons">
         <config-output *ngIf="data.conf[device].typeTag != undefined"
                         [currentDevice]="data.conf[device]"
+                        [changeColor] = "false"
                         (click) = "open(data.conf[device])">
         </config-output>
     </div>
