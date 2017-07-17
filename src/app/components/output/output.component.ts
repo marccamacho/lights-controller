@@ -3,8 +3,8 @@ import { OutputDevice }         from '../../classes/output-device'
 
 @Component({
   selector: 'config-output',
-  templateUrl: './config-output.component.html',
-  styleUrls: ['./config-output.component.scss']
+  templateUrl: './output.component.html',
+  styleUrls: ['./output.component.scss']
 })
 
 export class OutputComponent implements OnInit {
