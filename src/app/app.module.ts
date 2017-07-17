@@ -54,4 +54,5 @@ import { GetKeysPipe }              from './pipes/get-keys.pipe';
   providers: [ DataConfigService ],
   bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {
+}

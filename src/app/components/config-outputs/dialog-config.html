@@ -1,6 +1,7 @@
 <h1> Configuració d'una sortida </h1>
 
 <form>
+
     <md-select placeholder="Type" [(ngModel)]="device.typeTag" name="tag" >
         <md-option *ngFor="let type of dataConfig.typeTags" [value]="type">
             {{type}}
@@ -24,7 +25,7 @@
         <input mdInput placeholder="Description" [value]="description"  [(ngModel)]="device.description" name="description">
     </md-input-container>
 
-    
+
 </form>
 
 <button md-button (click)="closeDialog()">Save</button>

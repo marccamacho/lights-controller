@@ -1,11 +1,12 @@
 <div class="add">
-    <button md-fab (click)="open()" > <i class="material-icons">add</i> </button>
+    <button md-fab (click)="open(undefined)" > <i class="material-icons">add</i> </button>
 </div>
 
-<div *ngFor="let device of data.conf | getKeys">
-    {{data.conf[device].typeTag}}
-    <div *ngIf="data.conf[device].typeTag != undefined">
-         <config-output [currentDevice]="data.conf[device]"></config-output>
+<div class="container-outputs">
+    <div *ngFor="let device of data.conf | getKeys" class="icons">
+        <config-output *ngIf="data.conf[device].typeTag != undefined"
+                        [currentDevice]="data.conf[device]"
+                        (click) = "open(data.conf[device])">
+        </config-output>
     </div>
 </div>
-

@@ -11,9 +11,9 @@ import { ControlComponent }         from './components/control/control.component
 const appRoutes: Routes = [
     { path: '',             redirectTo: '/control', pathMatch: 'full' },
     { path: 'control',      component: ControlComponent },
-    { path: 'output',       component: OutputComponent },
+//    { path: 'output',       component: OutputComponent },
     { path: 'outputs',      component: ConfigOutputsComponent },
-    { path: 'programable',  component: ProgramableComponent },
+//    { path: 'programable',  component: ProgramableComponent },
     { path: 'makers',       component: MakersComponent },
     { path: '404',          redirectTo: ''},
     { path: '**',           redirectTo: ''}

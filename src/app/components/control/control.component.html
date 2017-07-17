@@ -1,1 +1,8 @@
-<buttons-control> </buttons-control>
+<div class="container-outputs">
+    <div *ngFor="let device of data.conf | getKeys" class="icons">
+        <config-output *ngIf="data.conf[device].typeTag != undefined"
+                        [currentDevice]="data.conf[device]"
+                        (press)="tooglePin(data.conf[device].outputPin)">
+        </config-output>
+    </div>
+</div>

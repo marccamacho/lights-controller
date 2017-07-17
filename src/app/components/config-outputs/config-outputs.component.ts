@@ -15,37 +15,37 @@ import { MdDialog, MdDialogRef } from '@angular/material';
 
 export class ConfigOutputsComponent implements OnInit {
 
-
-    device: OutputDevice = {typeTag:"", outputPin:"", name:"", description:""};
-
     constructor(public dataService: DataConfigService, public dialog: MdDialog) {
 
     }
 
     ngOnInit() {
-        this.dataService.currentPage = "CONFIGURACIÓ DE LES SORTIDES"       
+        this.dataService.currentPage = "CONFIGURACIÓ DE LES SORTIDES"
     }
 
     ngOnDestroy(){
         this.dataService.currentPage = ""
     }
 
-    dataConfig : any;
-
     get data():string{
         return this.dataService.dataConfig;
     }
 
 
-    open() {
+    open(selectedDevice) {
+
         let dialogRef = this.dialog.open(DialogConfigComponent);
         let instance = dialogRef.componentInstance;     // Instance of Dialog
 
         instance.dataConfig = this.dataService.dataConfig;   // Input to Dialog
-        instance.device = this.device;
+
+        // Init object in DialogConfigComponent to solve errors modifying objects
+        if (selectedDevice == undefined){
+            selectedDevice = {typeTag:"", outputPin:"", name:"", description:""};
+        }
+        instance.device = selectedDevice;
 
         dialogRef.afterClosed().subscribe(result => {
-            this.device = result;
         });
     }
 }
@@ -57,16 +57,17 @@ export class ConfigOutputsComponent implements OnInit {
 })
 export class DialogConfigComponent {
 
-    device: OutputDevice = {typeTag:"", outputPin:"", name:"", description:""};
+    device: OutputDevice;
     dataConfig : any;
-    
-    constructor(public dialogRef: MdDialogRef<any>) { }
+
+    constructor(public dialogRef: MdDialogRef<any>) {
+    }
 
     closeDialog() {
-      this.dialogRef.close(this.device);
+      this.dialogRef.close();
       this.dataConfig.conf[this.device.outputPin] = this.device;
     }
     close() {
-      this.dialogRef.close(this.device);
+      this.dialogRef.close();
     }
 }

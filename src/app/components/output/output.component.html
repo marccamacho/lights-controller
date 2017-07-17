@@ -1,20 +1,15 @@
 
-<div class="custom-div" style="width:120px; float:left;" *ngIf = "currentDevice.typeTag == 'LED';else other_content">
-
+<div class="custom-div" *ngIf = "currentDevice.typeTag == 'LED';else other_content">
     <p>
         <img class ="icon" src="./assets/images/svg/light.svg" onmouseover="this.src='./assets/images/svg/light_accent.svg';" onmouseout="this.src='./assets/images/svg/light.svg';"/>
     </p>
+    
+    <ng-template #other_content>
+        <p>
+            <img class ="icon" src='./assets/images/svg/ic_help_outline_black_24px.svg'  onmouseover="this.src='./assets/images/svg/ic_help_outline_black_24px.svg';"  onmouseout="this.src='./assets/images/svg/ic_help_outline_black_24px.svg';"/>
+        </p>
+    </ng-template>
 
     <p class="title">{{currentDevice.outputPin}}</p>
     <p class="subtitle">{{currentDevice.name}}</p>
-
 </div>
-
-<ng-template #other_content>
-    <div class="custom-div" style="width:120px; float:left;">
-
-        <img class ="icon" src='./assets/images/svg/ic_help_outline_black_24px.svg'  onmouseover="this.src='./assets/images/svg/ic_help_outline_black_24px.svg';"  onmouseout="this.src='./assets/images/svg/ic_help_outline_black_24px.svg';"/> 
-        <p class="title">{{currentDevice.outputPin}}</p>
-        <p class="subtitle">{{currentDevice.name}}</p>
-    </div>
-</ng-template>
