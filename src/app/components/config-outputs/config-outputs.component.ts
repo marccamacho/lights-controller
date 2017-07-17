@@ -57,8 +57,6 @@ export class ConfigOutputsComponent implements OnInit {
 })
 export class DialogConfigComponent {
 
-    show:boolean;
-
     device: OutputDevice = {typeTag:"", outputPin:"", name:"", description:""};
     dataConfig : any;
     

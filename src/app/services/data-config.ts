@@ -14,7 +14,7 @@ export class DataConfigService {
                         conf: {
                             out_3:{},
                             out_5:{},
-                            out_7:{}  
+                            out_7:{}
                         }
             }
         } else {
