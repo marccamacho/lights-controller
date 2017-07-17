@@ -15,7 +15,7 @@ import { MdDialog, MdDialogRef } from '@angular/material';
 
 export class ConfigOutputsComponent implements OnInit {
 
-    currentDevice: OutputDevice = {typeTag:"", outputPin:"", name:"", description:""};
+    device: OutputDevice = {typeTag:"", outputPin:"", name:"", description:""};
 
     constructor(public dataService: DataConfigService, public dialog: MdDialog) {
 
@@ -41,11 +41,11 @@ export class ConfigOutputsComponent implements OnInit {
         let instance = dialogRef.componentInstance;     // Instance of Dialog
 
         instance.dataConfig = this.dataService.dataConfig;   // Input to Dialog
-        instance.device = this.currentDevice;
+        instance.device = this.device;
 
         dialogRef.afterClosed().subscribe(result => {
             console.log(result);
-            this.currentDevice = result;
+            this.device = result;
         });
     }
 }
@@ -56,15 +56,17 @@ export class ConfigOutputsComponent implements OnInit {
     styleUrls: ['./dialog-config.scss']
 })
 export class DialogConfigComponent {
+
     device: OutputDevice = {typeTag:"", outputPin:"", name:"", description:""};
     dataConfig : any;
-    outputCommand:string = "conf." + this.device.outputPin;
+    
     constructor(public dialogRef: MdDialogRef<any>) { }
-    show:boolean=false;
 
     closeDialog() {
-
       this.dialogRef.close(this.device);
       this.dataConfig.conf[this.device.outputPin] = this.device;
+    }
+    close() {
+      this.dialogRef.close(this.device);
     }
 }
