@@ -20,7 +20,7 @@ import { LoginComponent }           from './components/login/login.component';
 import { ProgramableComponent }     from './components/programable/programable.component';
 import { MakersComponent }          from './components/makers/makers.component';
 import { ControlComponent }         from './components/control/control.component';
-import { ButtonsControlComponent }  from './components/buttons-controls/buttons-controls.component';
+import { ButtonsControlComponent }  from './components/buttons-control/buttons-control.component';
 
 // Services
 import { DataConfigService }        from './services/data-config';
@@ -40,7 +40,7 @@ import { GetKeysPipe }              from './pipes/get-keys.pipe';
     ControlComponent,
     DialogConfigComponent,
     GetKeysPipe,
-    ButtonsControlsComponent
+    ButtonsControlComponent
   ],
   imports: [
     BrowserModule,
