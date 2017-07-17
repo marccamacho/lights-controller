@@ -3,7 +3,8 @@
 </div>
 
 <div *ngFor="let device of data.conf | getKeys">
-    <div *ngIf="device.typeTag">
-         <!--<config-output [currentDevice]="device"></config-output>  -->
+    {{data.conf[device].typeTag}}
+    <div *ngIf="data.conf[device].typeTag != undefined">
+         <config-output [currentDevice]="data.conf[device]"></config-output>
     </div>
 </div>

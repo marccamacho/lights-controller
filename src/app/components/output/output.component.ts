@@ -15,7 +15,12 @@ export class OutputComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
+      console.log(this.currentDevice);
     }
 
+
+    ngOnChange() {
+      console.log(this.currentDevice);
+    }
 }
   
