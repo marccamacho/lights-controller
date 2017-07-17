@@ -1,0 +1,33 @@
+.custom-div{
+    min-height:100px;
+    min-width:100px;
+}
+
+.custom-div:hover{
+    color: green;
+}
+
+p{
+    text-align: center;
+    margin: 0;
+}
+
+.title{
+    color: rgba(0,0,0,0.54);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.subtitle{
+    color: rgba(0,0,0,0.38);
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.icon{
+    height: 100px;
+}
+
+.icon2{
+    height: 100px;
+}
