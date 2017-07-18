@@ -10,14 +10,21 @@
     float:left;
 }
 
+.container-center{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 98%;
+    justify-content: space-between;
+}
+
 .container-outputs{
-    max-width: 690px;
-    float: left;
+    max-width: 730px;
 }
 
 md-tab-group{
     width: 960px;
-    height: 523px;
 }
 
 /deep/
@@ -35,20 +42,23 @@ md-tab-group{
 .container-buttons{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    item-align: center;
     flex-wrap: wrap;
     height:100%;
 }
 
-.container-options{
-    height: 392px;
-    float: right;
-    margin:20px;
-    padding:20px;
+.container-buttons div {
+    height: 40%;
+    margin-left:auto;
+    margin-right:auto;
+    display:flex;
+    align-items:center;
 }
 
-.container-buttons div {
-  height: 50%;
-  margin-left:auto;margin-right:auto;
+.container-options{
+    text-align: center;
+    width: 175px;
+    height: 80%;
+    float: right;
+    margin:10px;
+    padding:0px;
 }

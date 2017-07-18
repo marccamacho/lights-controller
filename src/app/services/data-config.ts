@@ -24,9 +24,9 @@ export class DataConfigService {
                             out_10:{typeTag:"LED", outputPin:"out_10", name:"Name", description:"Sample"},
                             out_11:{typeTag:"LED", outputPin:"out_11", name:"Name", description:"Sample"},
                             out_12:{typeTag:"LED", outputPin:"out_12", name:"Name", description:"Sample"},
-                            out_13:{typeTag:"LED", outputPin:"out_13", name:"Name", description:"Sample"},
-                            out_14:{typeTag:"LED", outputPin:"out_14", name:"Name", description:"Sample"},
-                            out_15:{typeTag:"LED", outputPin:"out_15", name:"Name", description:"Sample"},
+                            out_13:{},
+                            out_14:{},
+                            out_15:{},
                             out_16:{}
                         }
             }

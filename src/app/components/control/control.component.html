@@ -1,24 +1,28 @@
 <md-tab-group>
   <md-tab label="Manual">
-      <div class="container-outputs" style="float:left ">
-          <div *ngFor="let device of data.conf | getKeys" class="icons">
-              <config-output *ngIf="data.conf[device].typeTag != undefined"
-                              [currentDevice]="data.conf[device]"
-                              (click)="toggleLED(data.conf[device].outputPin)">
-              </config-output>
+      <div class="container-center">
+          <div class="container-outputs" style="float:left ">
+              <div *ngFor="let device of data.conf | getKeys" class="icons">
+                  <config-output *ngIf="data.conf[device].typeTag != undefined"
+                                  [currentDevice]="data.conf[device]"
+                                  (click)="toggleLED(data.conf[device].outputPin)">
+                  </config-output>
+              </div>
           </div>
+
+          <md-card class="container-options">
+              <h4 style=" margin:10px"> Múltiple </h4>
+              <div class="container-buttons">
+                  <div>
+                      <button md-fab><i class="material-icons">power_settings_new</i></button>
+                  </div>
+                  <div>
+                      <button md-fab><i class="material-icons">power_settings_new</i></button>
+                  </div>
+              </div>
+          </md-card>
       </div>
-      <md-card class="container-options">
-          <h4> Control múltiple </h4>
-          <div class="container-buttons">
-              <div style="display:flex; align-items:center">
-                  <button md-fab><i class="material-icons">power_settings_new</i></button>
-              </div>
-              <div style="display:flex; align-items:center">
-                  <button md-fab><i class="material-icons">power_settings_new</i></button>
-              </div>
-          </div>
-      </md-card>
+
   </md-tab>
   <md-tab label="Automatic">...IN PROGRESS...</md-tab>
 </md-tab-group>
