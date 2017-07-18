@@ -13,3 +13,20 @@
 .container-outputs{
     max-width: 960px;
 }
+
+md-tab-group{
+    width: 100%;
+    height: 450px;
+}
+
+/deep/
+.mat-tab-label{
+    width: 50%;
+}
+
+.material-icons{
+    color: #1b5e20
+}
+.icons2{
+    color: #d50000
+}

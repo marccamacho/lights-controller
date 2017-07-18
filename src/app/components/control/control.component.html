@@ -1,8 +1,20 @@
-<div class="container-outputs">
-    <div *ngFor="let device of data.conf | getKeys" class="icons">
-        <config-output *ngIf="data.conf[device].typeTag != undefined"
-                        [currentDevice]="data.conf[device]"
-                        (press)="tooglePin(data.conf[device].outputPin)">
-        </config-output>
-    </div>
-</div>
+<md-tab-group>
+  <md-tab label="Manual">
+      <div class="container-outputs" style="float:left ">
+
+          <div *ngFor="let device of data.conf | getKeys" class="icons">
+              <config-output *ngIf="data.conf[device].typeTag != undefined"
+                              [currentDevice]="data.conf[device]"
+                              (press)="tooglePin(data.conf[device].outputPin)">
+              </config-output>
+          </div>
+      </div>
+      <button style="float:right; color:#d50000" md-fab><i class="material-icons">power_settings_new</i></button>
+      <button style="float:right" md-fab><i class="material-icons">power_settings_new</i></button>
+  </md-tab>
+  <md-tab label="Automatic">Content 2</md-tab>
+</md-tab-group>
+
+
+
+<!-- <buttons-control> </buttons-control> -->
