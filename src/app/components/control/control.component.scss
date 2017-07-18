@@ -11,12 +11,13 @@
 }
 
 .container-outputs{
-    max-width: 890px;
+    max-width: 690px;
+    float: left;
 }
 
 md-tab-group{
     width: 960px;
-    height: 450px;
+    height: 481px;
 }
 
 /deep/
@@ -35,11 +36,20 @@ md-tab-group{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    item-align: center;
     flex-wrap: wrap;
     height:100%;
-    margin-right: 10px;
+}
+
+.container-options{
+    height: 372px;
+    float: right;
+    margin:10px;
+    padding:20px;
+    margin-right:20px;
 }
 
 .container-buttons div {
   height: 50%;
+  margin-left:auto;margin-right:auto;
 }
