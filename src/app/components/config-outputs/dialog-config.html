@@ -1,14 +1,15 @@
-<h1> Configuració d'una sortida </h1>
+<h1 md-dialog-title> DETAILS </h1>
 
 <form>
 
-    <md-select placeholder="Type" [(ngModel)]="device.typeTag" name="tag" >
+    <md-select placeholder="Type" [(ngModel)]="device.typeTag" name="tag" id="select">
         <md-option *ngFor="let type of dataConfig.typeTags" [value]="type">
             {{type}}
         </md-option>
     </md-select>
+    <br><br><br>
 
-    <md-select placeholder="Output" [(ngModel)]="device.outputPin" name="pin" >
+    <md-select placeholder="Output" [(ngModel)]="device.outputPin" name="pin">
         <md-option *ngFor="let pin of dataConfig.conf | getKeys" [value]="pin">
             {{pin}}
         </md-option>
@@ -18,9 +19,9 @@
     <br>
 
     <md-input-container >
-        <input mdInput placeholder="Name" [value]="name" [(ngModel)]="device.name" name="name2" >
+        <input mdInput placeholder="Name" [value]="name" [(ngModel)]="device.name" name="name2" id="name">
     </md-input-container>
-
+    <br>
     <md-input-container >
         <input mdInput placeholder="Description" [value]="description"  [(ngModel)]="device.description" name="description">
     </md-input-container>
@@ -28,6 +29,8 @@
 
 </form>
 
-<button md-button (click)="closeDialog()">Save</button>
+<button md-button (click)="close()"> <span>CANCEL</span> </button>
 
-<button md-button (click)="close()">Cancel</button>
+<button md-button (click)="delete()" > <span>DELETE</span> </button>
+
+<button md-button (click)="closeDialog()" class="flat"> <span>SAVE</span> </button>
