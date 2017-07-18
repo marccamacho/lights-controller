@@ -202,8 +202,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 // Configuración de las rutas
 var appRoutes = [
-    { path: '', redirectTo: '/control', pathMatch: 'full' },
-    { path: 'control', component: __WEBPACK_IMPORTED_MODULE_4__components_control_control_component__["a" /* ControlComponent */] },
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_4__components_control_control_component__["a" /* ControlComponent */] },
     //    { path: 'output',       component: OutputComponent },
     { path: 'outputs', component: __WEBPACK_IMPORTED_MODULE_2__components_config_outputs_config_outputs_component__["a" /* ConfigOutputsComponent */] },
     //    { path: 'programable',  component: ProgramableComponent },
