@@ -760,7 +760,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".custom-div {\n  min-height: 50px;\n  float: center;\n  width: 115px;\n  margin-top: 15px;\n  margin-bottom: 15px;\n  margin-left: 10px;\n  margin-right: 10px; }\n\nsvg {\n  width: 90px;\n  fill: blue; }\n\n.custom-div:hover {\n  color: #9fffe0; }\n\np {\n  text-align: center;\n  margin: 0; }\n\n.title {\n  color: rgba(0, 0, 0, 0.54);\n  font-family: 'Roboto', sans-serif;\n  font-size: 16px; }\n\n.subtitle {\n  color: rgba(0, 0, 0, 0.38);\n  font-size: 14px;\n  font-family: 'Roboto', sans-serif; }\n\n.icon {\n  height: 100px; }\n\n.icon2 {\n  height: 100px; }\n", ""]);
+exports.push([module.i, ".custom-div {\n  min-height: 50px;\n  float: center;\n  width: 100px;\n  margin-top: 15px;\n  margin-bottom: 15px;\n  margin-left: 10px;\n  margin-right: 10px; }\n\nsvg {\n  width: 80px;\n  fill: blue; }\n\n.custom-div:hover {\n  color: #9fffe0; }\n\np {\n  text-align: center;\n  margin: 0; }\n\n.title {\n  color: rgba(0, 0, 0, 0.54);\n  font-family: 'Roboto', sans-serif;\n  font-size: 16px; }\n\n.subtitle {\n  color: rgba(0, 0, 0, 0.38);\n  font-size: 14px;\n  font-family: 'Roboto', sans-serif; }\n\n.icon {\n  height: 100px; }\n\n.icon2 {\n  height: 100px; }\n", ""]);
 
 // exports
 
