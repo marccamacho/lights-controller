@@ -471,7 +471,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".add {\n  top: auto;\n  right: 20px;\n  bottom: 47px;\n  left: auto;\n  position: fixed; }\n\n.icons {\n  float: left; }\n\n.container-outputs {\n  max-width: 690px;\n  float: left; }\n\nmd-tab-group {\n  width: 960px;\n  height: 481px; }\n\n/deep/\n.mat-tab-label {\n  width: 50%; }\n\n.material-icons {\n  color: #1b5e20; }\n\n.icons2 {\n  color: #d50000; }\n\n.container-buttons {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  item-align: center;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  height: 100%; }\n\n.container-options {\n  height: 372px;\n  float: right;\n  margin: 10px;\n  padding: 20px;\n  margin-right: 20px; }\n\n.container-buttons div {\n  height: 50%;\n  margin-left: auto;\n  margin-right: auto; }\n", ""]);
+exports.push([module.i, ".add {\n  top: auto;\n  right: 20px;\n  bottom: 47px;\n  left: auto;\n  position: fixed; }\n\n.icons {\n  float: left; }\n\n.container-outputs {\n  max-width: 690px;\n  float: left; }\n\nmd-tab-group {\n  width: 960px;\n  height: 523px; }\n\n/deep/\n.mat-tab-label {\n  width: 50%; }\n\n.material-icons {\n  color: #1b5e20; }\n\n.icons2 {\n  color: #d50000; }\n\n.container-buttons {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  item-align: center;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  height: 100%; }\n\n.container-options {\n  height: 392px;\n  float: right;\n  margin: 20px;\n  padding: 20px; }\n\n.container-buttons div {\n  height: 50%;\n  margin-left: auto;\n  margin-right: auto; }\n", ""]);
 
 // exports
 
@@ -760,7 +760,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".custom-div {\n  min-height: 50px;\n  float: center;\n  width: 80px;\n  margin-top: 15px;\n  margin-bottom: 15px;\n  margin-left: 9px;\n  margin-right: 9px; }\n\nsvg {\n  width: 50px;\n  fill: blue; }\n\n.custom-div:hover {\n  color: #9fffe0; }\n\np {\n  text-align: center;\n  margin: 0; }\n\n.title {\n  color: rgba(0, 0, 0, 0.54);\n  font-family: 'Roboto', sans-serif;\n  font-size: 16px; }\n\n.subtitle {\n  color: rgba(0, 0, 0, 0.38);\n  font-size: 14px;\n  font-family: 'Roboto', sans-serif; }\n\n.icon {\n  height: 100px; }\n\n.icon2 {\n  height: 100px; }\n", ""]);
+exports.push([module.i, ".custom-div {\n  min-height: 50px;\n  float: center;\n  width: 90px;\n  margin-top: 15px;\n  margin-bottom: 15px;\n  margin-left: 9px;\n  margin-right: 9px; }\n\nsvg {\n  width: 60px;\n  fill: blue; }\n\n.custom-div:hover {\n  color: #9fffe0; }\n\np {\n  text-align: center;\n  margin: 0; }\n\n.title {\n  color: rgba(0, 0, 0, 0.54);\n  font-family: 'Roboto', sans-serif;\n  font-size: 16px; }\n\n.subtitle {\n  color: rgba(0, 0, 0, 0.38);\n  font-size: 14px;\n  font-family: 'Roboto', sans-serif; }\n\n.icon {\n  height: 100px; }\n\n.icon2 {\n  height: 100px; }\n", ""]);
 
 // exports
 
