@@ -11,11 +11,11 @@
 }
 
 .container-outputs{
-    max-width: 960px;
+    max-width: 890px;
 }
 
 md-tab-group{
-    width: 100%;
+    width: 960px;
     height: 450px;
 }
 
@@ -29,4 +29,17 @@ md-tab-group{
 }
 .icons2{
     color: #d50000
+}
+
+.container-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height:100%;
+    margin-right: 10px;
+}
+
+.container-buttons div {
+  height: 50%;
 }

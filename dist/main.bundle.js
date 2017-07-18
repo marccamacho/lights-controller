@@ -91,22 +91,23 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_hammerjs__ = __webpack_require__("../../../../hammerjs/hammer.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_hammerjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_output_output_component__ = __webpack_require__("../../../../../src/app/components/output/output.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_config_outputs_config_outputs_component__ = __webpack_require__("../../../../../src/app/components/config-outputs/config-outputs.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_programable_programable_component__ = __webpack_require__("../../../../../src/app/components/programable/programable.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_makers_makers_component__ = __webpack_require__("../../../../../src/app/components/makers/makers.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_control_control_component__ = __webpack_require__("../../../../../src/app/components/control/control.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_buttons_control_buttons_control_component__ = __webpack_require__("../../../../../src/app/components/buttons-control/buttons-control.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_data_config__ = __webpack_require__("../../../../../src/app/services/data-config.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pipes_get_keys_pipe__ = __webpack_require__("../../../../../src/app/pipes/get-keys.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_hammerjs__ = __webpack_require__("../../../../hammerjs/hammer.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_hammerjs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_output_output_component__ = __webpack_require__("../../../../../src/app/components/output/output.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_config_outputs_config_outputs_component__ = __webpack_require__("../../../../../src/app/components/config-outputs/config-outputs.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_programable_programable_component__ = __webpack_require__("../../../../../src/app/components/programable/programable.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_makers_makers_component__ = __webpack_require__("../../../../../src/app/components/makers/makers.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_control_control_component__ = __webpack_require__("../../../../../src/app/components/control/control.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_buttons_control_buttons_control_component__ = __webpack_require__("../../../../../src/app/components/buttons-control/buttons-control.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_data_config__ = __webpack_require__("../../../../../src/app/services/data-config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pipes_get_keys_pipe__ = __webpack_require__("../../../../../src/app/pipes/get-keys.pipe.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -115,6 +116,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 // Needed modules
+
 
 
 
@@ -147,27 +149,28 @@ AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
         declarations: [
             __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__components_output_output_component__["a" /* OutputComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__components_config_outputs_config_outputs_component__["a" /* ConfigOutputsComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_footer_footer_component__["a" /* FooterComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__components_programable_programable_component__["a" /* ProgramableComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_makers_makers_component__["a" /* MakersComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__components_control_control_component__["a" /* ControlComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__components_config_outputs_config_outputs_component__["b" /* DialogConfigComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__pipes_get_keys_pipe__["a" /* GetKeysPipe */],
-            __WEBPACK_IMPORTED_MODULE_15__components_buttons_control_buttons_control_component__["a" /* ButtonsControlComponent */]
+            __WEBPACK_IMPORTED_MODULE_8__components_output_output_component__["a" /* OutputComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__components_config_outputs_config_outputs_component__["a" /* ConfigOutputsComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components_footer_footer_component__["a" /* FooterComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__components_programable_programable_component__["a" /* ProgramableComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__components_makers_makers_component__["a" /* MakersComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__components_control_control_component__["a" /* ControlComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__components_config_outputs_config_outputs_component__["b" /* DialogConfigComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__pipes_get_keys_pipe__["a" /* GetKeysPipe */],
+            __WEBPACK_IMPORTED_MODULE_16__components_buttons_control_buttons_control_component__["a" /* ButtonsControlComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_material__["a" /* MaterialModule */],
-            __WEBPACK_IMPORTED_MODULE_9__app_routing__["a" /* AppRoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* ReactiveFormsModule */]
+            __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_material__["a" /* MaterialModule */],
+            __WEBPACK_IMPORTED_MODULE_10__app_routing__["a" /* AppRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_forms__["b" /* ReactiveFormsModule */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */]
         ],
-        entryComponents: [__WEBPACK_IMPORTED_MODULE_8__components_config_outputs_config_outputs_component__["b" /* DialogConfigComponent */]],
-        providers: [__WEBPACK_IMPORTED_MODULE_16__services_data_config__["a" /* DataConfigService */]],
+        entryComponents: [__WEBPACK_IMPORTED_MODULE_9__components_config_outputs_config_outputs_component__["b" /* DialogConfigComponent */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_17__services_data_config__["a" /* DataConfigService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -457,7 +460,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/control/control.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-tab-group>\n  <md-tab label=\"Manual\">\n      <div class=\"container-outputs\" style=\"float:left \">\n\n          <div *ngFor=\"let device of data.conf | getKeys\" class=\"icons\">\n              <config-output *ngIf=\"data.conf[device].typeTag != undefined\"\n                              [currentDevice]=\"data.conf[device]\"\n                              (press)=\"tooglePin(data.conf[device].outputPin)\">\n              </config-output>\n          </div>\n      </div>\n      <button style=\"float:right; color:#d50000\" md-fab><i class=\"material-icons\">power_settings_new</i></button>\n      <button style=\"float:right\" md-fab><i class=\"material-icons\">power_settings_new</i></button>\n  </md-tab>\n  <md-tab label=\"Automatic\">Content 2</md-tab>\n</md-tab-group>\n\n\n\n<!-- <buttons-control> </buttons-control> -->\n"
+module.exports = "<md-tab-group>\n  <md-tab label=\"Manual\">\n      <div class=\"container-outputs\" style=\"float:left \">\n          <div *ngFor=\"let device of data.conf | getKeys\" class=\"icons\">\n              <config-output *ngIf=\"data.conf[device].typeTag != undefined\"\n                              [currentDevice]=\"data.conf[device]\"\n                              (click)=\"toggleLED(data.conf[device].outputPin)\">\n              </config-output>\n          </div>\n      </div>\n      <div class=\"container-buttons\">\n          <div style=\"display:flex; align-items:center\">\n              <button md-fab><i class=\"material-icons\">power_settings_new</i></button>\n          </div>\n          <div style=\"display:flex; align-items:center\">\n              <button md-fab><i class=\"material-icons\">power_settings_new</i></button>\n          </div>\n      </div>\n  </md-tab>\n  <md-tab label=\"Automatic\">...IN PROGRESS...</md-tab>\n</md-tab-group>\n\n\n\n<!-- <buttons-control> </buttons-control> -->\n"
 
 /***/ }),
 
@@ -469,7 +472,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".add {\n  top: auto;\n  right: 20px;\n  bottom: 47px;\n  left: auto;\n  position: fixed; }\n\n.icons {\n  float: left; }\n\n.container-outputs {\n  max-width: 960px; }\n\nmd-tab-group {\n  width: 100%;\n  height: 450px; }\n\n/deep/\n.mat-tab-label {\n  width: 50%; }\n\n.material-icons {\n  color: #1b5e20; }\n\n.icons2 {\n  color: #d50000; }\n", ""]);
+exports.push([module.i, ".add {\n  top: auto;\n  right: 20px;\n  bottom: 47px;\n  left: auto;\n  position: fixed; }\n\n.icons {\n  float: left; }\n\n.container-outputs {\n  max-width: 890px; }\n\nmd-tab-group {\n  width: 960px;\n  height: 450px; }\n\n/deep/\n.mat-tab-label {\n  width: 50%; }\n\n.material-icons {\n  color: #1b5e20; }\n\n.icons2 {\n  color: #d50000; }\n\n.container-buttons {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  height: 100%;\n  margin-right: 10px; }\n\n.container-buttons div {\n  height: 50%; }\n", ""]);
 
 // exports
 
@@ -485,6 +488,7 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_data_config__ = __webpack_require__("../../../../../src/app/services/data-config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ControlComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -497,10 +501,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var ControlComponent = (function () {
-    function ControlComponent(dataService) {
+    function ControlComponent(dataService, httpclient) {
         this.dataService = dataService;
-        this.outputs = [];
+        this.httpclient = httpclient;
+        this.outputs = []; // Selected OUTPUTS
+        this.activeOutputs = []; // Active OUTPUTS
     }
     ControlComponent.prototype.ngOnInit = function () {
         this.dataService.currentPage = "TAULA DE CONTROL";
@@ -508,7 +515,17 @@ var ControlComponent = (function () {
     ControlComponent.prototype.ngOnDestroy = function () {
         this.dataService.currentPage = "";
     };
-    ControlComponent.prototype.tooglePin = function (pin) {
+    ControlComponent.prototype.toggleLED = function (pin) {
+        var index = this.activeOutputs.indexOf(pin);
+        if (index == -1) {
+            this.activeOutputs.push(pin);
+        }
+        else {
+            this.activeOutputs.splice(index, 1);
+        }
+        console.log(this.outputs);
+    };
+    ControlComponent.prototype.togglePin = function (pin) {
         var index = this.outputs.indexOf(pin);
         if (index == -1) {
             this.outputs.push(pin);
@@ -533,10 +550,10 @@ ControlComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/control/control.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/control/control.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_data_config__["a" /* DataConfigService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_data_config__["a" /* DataConfigService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_data_config__["a" /* DataConfigService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_data_config__["a" /* DataConfigService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _b || Object])
 ], ControlComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=control.component.js.map
 
 /***/ }),
@@ -732,7 +749,7 @@ var _a;
 /***/ "../../../../../src/app/components/output/output.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div (press)=\"toggleColor()\" class=\"custom-div\" *ngIf = \"currentDevice.typeTag == 'LED'; else other_content\">\n    <p>\n        <svg [ngStyle] = \"{'fill': currentColor}\" id=\"Objects\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 70.59 105.28\"><title>LED</title><path d=\"M435.15,96.62a35.3,35.3,0,1,0-70.59,0,34.84,34.84,0,0,0,7.56,21.77,134,134,0,0,1,9.65,14V153.9a3.53,3.53,0,0,0,3.53,3.53h4v1.71a7.46,7.46,0,0,0,7.46,7.46h6.18a7.46,7.46,0,0,0,7.46-7.46v-1.71h4A3.53,3.53,0,0,0,418,153.9V132.46a131.76,131.76,0,0,1,9.64-14.06A34.84,34.84,0,0,0,435.15,96.62ZM394.73,127.9l-6.11-26.64L392.29,99l4.54,4.27a1.83,1.83,0,0,0,1.32.48,1.77,1.77,0,0,0,1.25-.64l3.92-4.78,2.29,4.46a1.77,1.77,0,0,0,1.57,1,1.74,1.74,0,0,0,.68-0.13l3-1.23L405,127.9H394.73ZM410.88,135v5.93H388.83V135h22.05Zm-22.05,15.39v-5.93h22.05v5.93H388.83Zm23.58-22.46h-2l6.69-29.16a2.65,2.65,0,1,0-5.17-1.18l-0.14.59L408,99.72l-2.77-5.41a1.77,1.77,0,0,0-1.39-1,1.74,1.74,0,0,0-1.55.63l-4.43,5.4-4.15-3.9a1.77,1.77,0,0,0-2.14-.22l-3.81,2.34V97.56a2.65,2.65,0,0,0-5.17,1.19l6.69,29.16h-2A140.1,140.1,0,0,0,377.66,114a27.84,27.84,0,0,1-6-17.4,28.23,28.23,0,1,1,56.46,0,27.83,27.83,0,0,1-6,17.4A139.53,139.53,0,0,0,412.41,127.9Z\" transform=\"translate(-364.56 -61.32)\"/></svg>\n    </p>\n\n    <ng-template #other_content>\n        <p>\n            <img class =\"icon\" src='./assets/images/svg/ic_help_outline_black_24px.svg'  onmouseover=\"this.src='./assets/images/svg/ic_help_outline_black_24px.svg';\"  onmouseout=\"this.src='./assets/images/svg/ic_help_outline_black_24px.svg';\"/>\n        </p>\n    </ng-template>\n\n    <p class=\"title\">{{currentDevice.outputPin}}</p>\n    <p class=\"subtitle\">{{currentDevice.name}}</p>\n</div>\n"
+module.exports = "\n<div (click)=\"toggleColor()\" class=\"custom-div\" *ngIf = \"currentDevice.typeTag == 'LED'; else other_content\">\n    <p>\n        <svg [ngStyle] = \"{'fill': currentColor}\" id=\"Objects\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 70.59 105.28\"><title>LED</title><path d=\"M435.15,96.62a35.3,35.3,0,1,0-70.59,0,34.84,34.84,0,0,0,7.56,21.77,134,134,0,0,1,9.65,14V153.9a3.53,3.53,0,0,0,3.53,3.53h4v1.71a7.46,7.46,0,0,0,7.46,7.46h6.18a7.46,7.46,0,0,0,7.46-7.46v-1.71h4A3.53,3.53,0,0,0,418,153.9V132.46a131.76,131.76,0,0,1,9.64-14.06A34.84,34.84,0,0,0,435.15,96.62ZM394.73,127.9l-6.11-26.64L392.29,99l4.54,4.27a1.83,1.83,0,0,0,1.32.48,1.77,1.77,0,0,0,1.25-.64l3.92-4.78,2.29,4.46a1.77,1.77,0,0,0,1.57,1,1.74,1.74,0,0,0,.68-0.13l3-1.23L405,127.9H394.73ZM410.88,135v5.93H388.83V135h22.05Zm-22.05,15.39v-5.93h22.05v5.93H388.83Zm23.58-22.46h-2l6.69-29.16a2.65,2.65,0,1,0-5.17-1.18l-0.14.59L408,99.72l-2.77-5.41a1.77,1.77,0,0,0-1.39-1,1.74,1.74,0,0,0-1.55.63l-4.43,5.4-4.15-3.9a1.77,1.77,0,0,0-2.14-.22l-3.81,2.34V97.56a2.65,2.65,0,0,0-5.17,1.19l6.69,29.16h-2A140.1,140.1,0,0,0,377.66,114a27.84,27.84,0,0,1-6-17.4,28.23,28.23,0,1,1,56.46,0,27.83,27.83,0,0,1-6,17.4A139.53,139.53,0,0,0,412.41,127.9Z\" transform=\"translate(-364.56 -61.32)\"/></svg>\n    </p>\n\n    <ng-template #other_content>\n        <p>\n            <img class =\"icon\" src='./assets/images/svg/ic_help_outline_black_24px.svg'  onmouseover=\"this.src='./assets/images/svg/ic_help_outline_black_24px.svg';\"  onmouseout=\"this.src='./assets/images/svg/ic_help_outline_black_24px.svg';\"/>\n        </p>\n    </ng-template>\n\n    <p class=\"title\">{{currentDevice.outputPin}}</p>\n    <p class=\"subtitle\">{{currentDevice.name}}</p>\n</div>\n"
 
 /***/ }),
 
@@ -744,7 +761,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".custom-div {\n  min-height: 100px;\n  min-width: 100px;\n  float: center;\n  width: 100px;\n  margin-top: 20px;\n  margin-bottom: 20px;\n  margin-left: 10px;\n  margin-right: 10px; }\n\nsvg {\n  width: 80px;\n  fill: blue; }\n\n.custom-div:hover {\n  color: #9fffe0; }\n\np {\n  text-align: center;\n  margin: 0; }\n\n.title {\n  color: rgba(0, 0, 0, 0.54);\n  font-family: 'Roboto', sans-serif;\n  font-size: 16px; }\n\n.subtitle {\n  color: rgba(0, 0, 0, 0.38);\n  font-size: 14px;\n  font-family: 'Roboto', sans-serif; }\n\n.icon {\n  height: 100px; }\n\n.icon2 {\n  height: 100px; }\n", ""]);
+exports.push([module.i, ".custom-div {\n  min-height: 100px;\n  float: center;\n  width: 80px;\n  margin-top: 25px;\n  margin-bottom: 25px;\n  margin-left: 8px;\n  margin-right: 8px; }\n\nsvg {\n  width: 60px;\n  fill: blue; }\n\n.custom-div:hover {\n  color: #9fffe0; }\n\np {\n  text-align: center;\n  margin: 0; }\n\n.title {\n  color: rgba(0, 0, 0, 0.54);\n  font-family: 'Roboto', sans-serif;\n  font-size: 16px; }\n\n.subtitle {\n  color: rgba(0, 0, 0, 0.38);\n  font-size: 14px;\n  font-family: 'Roboto', sans-serif; }\n\n.icon {\n  height: 100px; }\n\n.icon2 {\n  height: 100px; }\n", ""]);
 
 // exports
 
@@ -798,11 +815,11 @@ var OutputComponent = (function () {
     return OutputComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Input */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */])(),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__classes_output_device__["a" /* OutputDevice */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__classes_output_device__["a" /* OutputDevice */]) === "function" && _a || Object)
 ], OutputComponent.prototype, "currentDevice", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Input */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */])(),
     __metadata("design:type", Boolean)
 ], OutputComponent.prototype, "changeColor", void 0);
 OutputComponent = __decorate([
@@ -907,7 +924,7 @@ var GetKeysPipe = (function () {
     return GetKeysPipe;
 }());
 GetKeysPipe = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Pipe */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Pipe */])({
         name: 'getKeys'
     })
 ], GetKeysPipe);

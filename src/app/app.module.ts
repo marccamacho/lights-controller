@@ -3,6 +3,7 @@ import { BrowserModule }            from '@angular/platform-browser';
 import { NgModule }                 from '@angular/core';
 import { Router }                   from '@angular/router';
 import { AppComponent }             from './app.component';
+import { HttpModule }               from '@angular/http';
 
 // Material Imports
 import { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
@@ -48,7 +49,8 @@ import { GetKeysPipe }              from './pipes/get-keys.pipe';
     MaterialModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   entryComponents: [ DialogConfigComponent ],
   providers: [ DataConfigService ],
