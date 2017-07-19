@@ -9,18 +9,31 @@
                   </config-output>
               </div>
           </div>
+          <style>
+              #vertical-bar {
+                  border-left: 2px solid #ccc;
+                  width:3px;
+                  height:400px;
+              }
+          </style>
 
-          <md-card class="container-options">
+          <div id="vertical-bar"></div>
+
+          <div class="container-options">
+              <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
               <h4 style=" margin:10px"> Control Múltiple </h4>
               <div class="container-buttons">
                   <div>
-                      <button md-fab><i class="material-icons">power_settings_new</i></button>
+                       <md-radio-button value="2">ON</md-radio-button>
                   </div>
                   <div>
-                      <button md-fab><i class="material-icons">power_settings_new</i></button>
+                       <md-radio-button value="1">OFF</md-radio-button>
+                  </div>
+                  <div>
+                      <md-slider min="0" max="100" step="5" thumbLabel tickInterval="1"></md-slider>
                   </div>
               </div>
-          </md-card>
+          </div>
       </div>
 
   </md-tab>

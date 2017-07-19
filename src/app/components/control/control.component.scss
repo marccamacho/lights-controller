@@ -11,7 +11,7 @@
 }
 
 .container-center{
-    margin: 10px; 
+    margin: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -48,7 +48,7 @@ md-tab-group{
 }
 
 .container-buttons div {
-    height: 40%;
+    height: 30%;
     margin-left:auto;
     margin-right:auto;
     display:flex;
@@ -57,9 +57,23 @@ md-tab-group{
 
 .container-options{
     text-align: center;
-    width: 175px;
+    width: 150px;
     height: 80%;
     float: right;
     margin:10px;
     padding:0px;
+}
+
+.material-icons{
+    color:black;
+}
+
+h4{
+    font-family: 'Roboto', sans-serif;
+    color: black;
+}
+
+/deep/
+.mat-slider-thumb{
+    background-color: #69f0ae !important;
 }
