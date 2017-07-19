@@ -10,7 +10,14 @@
 
 svg{
     width:80px;
-    fill:blue;
+}
+
+.active{
+    fill: rgba(43, 189, 126, 0.54);
+}
+
+.inactive{
+    fill: rgba(0, 0, 0, 0.54);
 }
 
 .custom-div:hover{

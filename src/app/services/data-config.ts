@@ -12,14 +12,14 @@ export class DataConfigService {
             this.dataConfig = {
                         typeTags: ["LED", "Fan", "Light Bulb", "Speaker"],
                         conf: {
-                            3:{typeTag:"LED", outputPin:"3", name:"Name", description:"Sample"},
-                            5:{typeTag:"LED", outputPin:"5", name:"Name", description:"Sample"},
-                            7:{typeTag:"LED", outputPin:"7", name:"Name", description:"Sample"},
-                            29:{typeTag:"LED", outputPin:"29", name:"Name", description:"Sample"},
-                            31:{typeTag:"LED", outputPin:"31", name:"Name", description:"Sample"},
-                            33:{typeTag:"LED", outputPin:"33", name:"Name", description:"Sample"},
-                            35:{typeTag:"LED", outputPin:"35", name:"Name", description:"Sample"},
-                            37:{typeTag:"LED", outputPin:"37", name:"Name", description:"Sample"}
+                            3:{typeTag:"LED", outputPin:"3", name:"Name", description:"Sample", active: false},
+                            5:{typeTag:"LED", outputPin:"5", name:"Name", description:"Sample", active: false},
+                            7:{typeTag:"LED", outputPin:"7", name:"Name", description:"Sample", active: false},
+                            29:{typeTag:"LED", outputPin:"29", name:"Name", description:"Sample", active: false},
+                            31:{typeTag:"LED", outputPin:"31", name:"Name", description:"Sample", active: false},
+                            33:{typeTag:"LED", outputPin:"33", name:"Name", description:"Sample", active: false},
+                            35:{typeTag:"LED", outputPin:"35", name:"Name", description:"Sample", active: false},
+                            37:{typeTag:"LED", outputPin:"37", name:"Name", description:"Sample", active: false}
                         },
                         programs: [
                             {htmlQuery: this.serverIP + "rafaga?pins=3&pins=9&delay=0.5&times=10", name: "Rafaga", description: "Rafaga senzilla"},
@@ -35,7 +35,7 @@ export class DataConfigService {
 
     // Get configuration JSON from server
     getRemoteConfig () {
-
+        
     }
 
     // Update configuration JSON from server

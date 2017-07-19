@@ -1,8 +1,12 @@
 import { Component, OnInit }    from '@angular/core';
+import { MdSnackBar } from '@angular/material';
 
 import { DataConfigService }    from '../../services/data-config';
 import { GetKeysPipe }          from '../../pipes/get-keys.pipe';
-import { Http, Headers, Response, Jsonp, RequestOptions } from '@angular/http';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
+import 'rxjs/add/operator/timeout'
+
+
 
 @Component({
   selector: 'app-control',
@@ -12,10 +16,9 @@ import { Http, Headers, Response, Jsonp, RequestOptions } from '@angular/http';
 
 export class ControlComponent implements OnInit {
     outputs = [];           // Selected OUTPUTS
-    activeOutputs = [];     // Active OUTPUTS
     resultsHTTP :string[];
 
-    constructor(public dataService: DataConfigService, private httpclient: Http) {
+    constructor(public dataService: DataConfigService, private httpclient: Http, public snackBar: MdSnackBar) {
 
     }
 
@@ -28,40 +31,44 @@ export class ControlComponent implements OnInit {
     }
 
     toggleLED(pin){
-        var index = this.activeOutputs.indexOf(pin);
-        if (index == -1) {      // Does not exist
-            this.activeOutputs.push(pin);
+        if (!this.dataService.dataConfig.conf[pin].active) {      // Does not exist
 
             // Crida HTTP per engegar el LED que està en el PIN: <pin>
             let crida  =  this.dataService.serverIP + "on?pins=" + pin;
-            console.log(crida);
 
             // Make the HTTP request:
-            this.httpclient.get(crida).subscribe(data => {
-                console.log("Resposta rebuda")
-            });
+            this.httpclient.get(crida)
+                .timeout(1000)
+                .subscribe(
+                    (data) => {
+                                console.log("Resposta rebuda")
+                                this.dataService.dataConfig.conf[pin].active = true;
+                            },
+                    err => this.openSnackBar("Error en la connexió", "CLOSE")
+                );
         } else{
-            this.activeOutputs.splice(index, 1);
+            this.dataService.dataConfig.conf[pin].active = false;
 
             // Crida HTTP per apagar el LED que està en el PIN: <pin>
             let crida  =  this.dataService.serverIP + "off?pins=" + pin;
-            console.log(crida);
 
             // Make the HTTP request:
-            this.httpclient.get(crida).subscribe(data => {
-                console.log("Resposta rebuda")
-            });
+            this.httpclient.get(crida)
+                .timeout(1000)
+                .subscribe(
+                    (data) => {
+                                console.log("Resposta rebuda")
+                                this.dataService.dataConfig.conf[pin].active = false;
+                            },
+                    err => this.openSnackBar("Error en la connexió", "CLOSE")
+                );
         }
     }
 
-    togglePin(pin){
-        var index = this.outputs.indexOf(pin);
-        if (index == -1) {      // Does not exist
-            this.outputs.push(pin);
-        } else{
-            this.outputs.splice(index, 1);
-        }
-        console.log(this.outputs)
+    openSnackBar(message: string, action: string) {
+      this.snackBar.open(message, action, {
+        duration: 2000,
+      });
     }
 
     get data():string{
