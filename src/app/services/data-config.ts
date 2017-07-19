@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class DataConfigService {
 
-    serverIP    : string = "http://192.168.1.179:5000/";  // Server IP
+    serverIP    : string = "http://192.168.0.123:5000/";  // Server IP
     dataConfig  : any;          // Configuration data in JSON format. See README.md.
     currentPage : string = "TAULA DE CONTROL";
 
