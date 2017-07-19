@@ -3,13 +3,14 @@
     <p>
         <svg [ngStyle] = "{'fill': currentColor}" id="Objects" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.59 105.28"><title>LED</title><path d="M435.15,96.62a35.3,35.3,0,1,0-70.59,0,34.84,34.84,0,0,0,7.56,21.77,134,134,0,0,1,9.65,14V153.9a3.53,3.53,0,0,0,3.53,3.53h4v1.71a7.46,7.46,0,0,0,7.46,7.46h6.18a7.46,7.46,0,0,0,7.46-7.46v-1.71h4A3.53,3.53,0,0,0,418,153.9V132.46a131.76,131.76,0,0,1,9.64-14.06A34.84,34.84,0,0,0,435.15,96.62ZM394.73,127.9l-6.11-26.64L392.29,99l4.54,4.27a1.83,1.83,0,0,0,1.32.48,1.77,1.77,0,0,0,1.25-.64l3.92-4.78,2.29,4.46a1.77,1.77,0,0,0,1.57,1,1.74,1.74,0,0,0,.68-0.13l3-1.23L405,127.9H394.73ZM410.88,135v5.93H388.83V135h22.05Zm-22.05,15.39v-5.93h22.05v5.93H388.83Zm23.58-22.46h-2l6.69-29.16a2.65,2.65,0,1,0-5.17-1.18l-0.14.59L408,99.72l-2.77-5.41a1.77,1.77,0,0,0-1.39-1,1.74,1.74,0,0,0-1.55.63l-4.43,5.4-4.15-3.9a1.77,1.77,0,0,0-2.14-.22l-3.81,2.34V97.56a2.65,2.65,0,0,0-5.17,1.19l6.69,29.16h-2A140.1,140.1,0,0,0,377.66,114a27.84,27.84,0,0,1-6-17.4,28.23,28.23,0,1,1,56.46,0,27.83,27.83,0,0,1-6,17.4A139.53,139.53,0,0,0,412.41,127.9Z" transform="translate(-364.56 -61.32)"/></svg>
     </p>
-
-    <ng-template #other_content>
-        <p>
-            <img class ="icon" src='./assets/images/svg/ic_help_outline_black_24px.svg'  onmouseover="this.src='./assets/images/svg/ic_help_outline_black_24px.svg';"  onmouseout="this.src='./assets/images/svg/ic_help_outline_black_24px.svg';"/>
-        </p>
-    </ng-template>
-
     <p class="title">{{currentDevice.outputPin}}</p>
     <p class="subtitle">{{currentDevice.name}}</p>
 </div>
+
+<ng-template #other_content>
+    <p>
+        <img class ="icon" src='./assets/images/svg/ic_help_outline_black_24px.svg'  onmouseover="this.src='./assets/images/svg/ic_help_outline_black_24px.svg';"  onmouseout="this.src='./assets/images/svg/ic_help_outline_black_24px.svg';"/>
+    </p>
+    <p class="title">{{currentDevice.outputPin}}</p>
+    <p class="subtitle">{{currentDevice.name}}</p>
+</ng-template>

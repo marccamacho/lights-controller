@@ -36,7 +36,7 @@ export class ConfigOutputsComponent implements OnInit {
         let dialogRef = this.dialog.open(DialogConfigComponent, {
             width: '600px'
         });
-        
+
         let instance = dialogRef.componentInstance;     // Instance of Dialog
 
         instance.dataConfig = this.dataService.dataConfig;   // Input to Dialog
@@ -60,7 +60,7 @@ export class ConfigOutputsComponent implements OnInit {
 export class DialogConfigComponent {
 
     device: OutputDevice;
-    dataConfig : any;
+    dataConfig: any;
 
     constructor(public dialogRef: MdDialogRef<any>) {
     }
@@ -72,7 +72,7 @@ export class DialogConfigComponent {
     close() {
       this.dialogRef.close();
     }
-    
+
     delete() {
         this.dataConfig.conf[this.device.outputPin] = {};
         this.close();

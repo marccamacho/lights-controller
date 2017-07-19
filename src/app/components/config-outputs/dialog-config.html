@@ -1,36 +1,48 @@
 <h1 md-dialog-title> DETAILS </h1>
-
+<br>
 <form>
+    <span md-dialog-title class="placeh">Type   </span>
+    <div id="space1"></div>
+    <md-select [(ngModel)]="device.typeTag" name="tag" id="select">
 
-    <md-select placeholder="Type" [(ngModel)]="device.typeTag" name="tag" id="select">
         <md-option *ngFor="let type of dataConfig.typeTags" [value]="type">
             {{type}}
         </md-option>
     </md-select>
-    <br><br><br>
+    <br><br>
 
-    <md-select placeholder="Output" [(ngModel)]="device.outputPin" name="pin">
+    <span md-dialog-title class="placeh">Output Pin</span>
+    <div id="space2"></div>
+    <md-select  [(ngModel)]="device.outputPin" name="pin">
+
         <md-option *ngFor="let pin of dataConfig.conf | getKeys" [value]="pin">
             {{pin}}
         </md-option>
     </md-select>
-
+    
     <br>
-    <br>
 
-    <md-input-container >
-        <input mdInput placeholder="Name" [value]="name" [(ngModel)]="device.name" name="name2" id="name">
+    <span md-dialog-title class="placeh">Name </span>
+    <div id="space3"></div>
+    <md-input-container style="width:70%">
+        <input  mdInput  [value]="name" [(ngModel)]="device.name" name="name2" class="mat-input-element">
     </md-input-container>
     <br>
-    <md-input-container >
-        <input mdInput placeholder="Description" [value]="description"  [(ngModel)]="device.description" name="description">
+
+    <span md-dialog-title class="placeh">Description</span>
+    <div id="space4"></div>
+    <md-input-container style="width:70%">
+
+        <input mdInput [value]="description"  [(ngModel)]="device.description" name="description" class="mat-input-element">
     </md-input-container>
 
 
 </form>
 
-<button md-button (click)="close()"> <span>CANCEL</span> </button>
 
-<button md-button (click)="delete()" > <span>DELETE</span> </button>
 
-<button md-button (click)="closeDialog()" class="flat"> <span>SAVE</span> </button>
+<button md-button (click)="delete()" > <span class="tbutton">DELETE</span> </button>
+
+<button md-button (click)="close()" id="cancel"> <span class="tbutton">CANCEL</span> </button>
+
+<button md-button (click)="closeDialog()" class="flat"> <span class="tbutton">SAVE</span> </button>

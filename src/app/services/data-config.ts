@@ -3,31 +3,23 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class DataConfigService {
 
-    serverIP    : string = "";  // Server IP
+    serverIP    : string = "http://192.168.0.122:5000/";  // Server IP
     dataConfig  : any;          // Configuration data in JSON format. See README.md.
     currentPage : string = "TAULA DE CONTROL";
 
     constructor() {
-        if (this.serverIP == "") {
+        if (this.serverIP != "") {
             this.dataConfig = {
                         typeTags: ["LED", "Fan", "Light Bulb", "Speaker"],
                         conf: {
-                            out_1:{typeTag:"LED", outputPin:"out_1", name:"Name", description:"Sample"},
-                            out_2:{typeTag:"LED", outputPin:"out_2", name:"Name", description:"Sample"},
-                            out_3:{typeTag:"LED", outputPin:"out_3", name:"Name", description:"Sample"},
-                            out_4:{typeTag:"LED", outputPin:"out_4", name:"Name", description:"Sample"},
-                            out_5:{typeTag:"LED", outputPin:"out_5", name:"Name", description:"Sample"},
-                            out_6:{typeTag:"LED", outputPin:"out_6", name:"Name", description:"Sample"},
-                            out_7:{typeTag:"LED", outputPin:"out_7", name:"Name", description:"Sample"},
-                            out_8:{typeTag:"LED", outputPin:"out_8", name:"Name", description:"Sample"},
-                            out_9:{typeTag:"LED", outputPin:"out_9", name:"Name", description:"Sample"},
-                            out_10:{typeTag:"LED", outputPin:"out_10", name:"Name", description:"Sample"},
-                            out_11:{typeTag:"LED", outputPin:"out_11", name:"Name", description:"Sample"},
-                            out_12:{typeTag:"LED", outputPin:"out_12", name:"Name", description:"Sample"},
-                            out_13:{},
-                            out_14:{},
-                            out_15:{},
-                            out_16:{}
+                            3:{typeTag:"LED", outputPin:"3", name:"Name", description:"Sample"},
+                            5:{typeTag:"LED", outputPin:"5", name:"Name", description:"Sample"},
+                            7:{typeTag:"LED", outputPin:"7", name:"Name", description:"Sample"},
+                            29:{typeTag:"LED", outputPin:"29", name:"Name", description:"Sample"},
+                            31:{typeTag:"LED", outputPin:"31", name:"Name", description:"Sample"},
+                            33:{typeTag:"LED", outputPin:"33", name:"Name", description:"Sample"},
+                            35:{typeTag:"LED", outputPin:"35", name:"Name", description:"Sample"},
+                            37:{typeTag:"LED", outputPin:"37", name:"Name", description:"Sample"}
                         }
             }
         } else {
