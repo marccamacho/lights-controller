@@ -31,11 +31,27 @@ export class ControlComponent implements OnInit {
         var index = this.activeOutputs.indexOf(pin);
         if (index == -1) {      // Does not exist
             this.activeOutputs.push(pin);
+
+            // Crida HTTP per engegar el LED que està en el PIN: <pin>
+            let crida  =  this.dataService.serverIP + "on?pins=" + pin;
+            console.log(crida);
+
+            // Make the HTTP request:
+            this.httpclient.get(crida).subscribe(data => {
+                console.log("Resposta rebuda")
+            });
         } else{
             this.activeOutputs.splice(index, 1);
-        }
-        console.log(this.outputs)
 
+            // Crida HTTP per apagar el LED que està en el PIN: <pin>
+            let crida  =  this.dataService.serverIP + "off?pins=" + pin;
+            console.log(crida);
+
+            // Make the HTTP request:
+            this.httpclient.get(crida).subscribe(data => {
+                console.log("Resposta rebuda")
+            });
+        }
     }
 
     togglePin(pin){
