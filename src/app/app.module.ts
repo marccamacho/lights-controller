@@ -28,6 +28,7 @@ import { DataConfigService }        from './services/data-config';
 
 // Pipes
 import { GetKeysPipe }              from './pipes/get-keys.pipe';
+import { ProgramComponent } from './components/program/program.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { GetKeysPipe }              from './pipes/get-keys.pipe';
     ControlComponent,
     DialogConfigComponent,
     GetKeysPipe,
-    ButtonsControlComponent
+    ButtonsControlComponent,
+    ProgramComponent
   ],
   imports: [
     BrowserModule,

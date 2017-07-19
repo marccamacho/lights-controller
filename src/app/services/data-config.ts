@@ -20,7 +20,13 @@ export class DataConfigService {
                             33:{typeTag:"LED", outputPin:"33", name:"Name", description:"Sample"},
                             35:{typeTag:"LED", outputPin:"35", name:"Name", description:"Sample"},
                             37:{typeTag:"LED", outputPin:"37", name:"Name", description:"Sample"}
-                        }
+                        },
+                        programs: [
+                            {htmlQuery: this.serverIP + "rafaga?pins=3&pins=9&delay=0.5&times=10", name: "Rafaga", description: "Rafaga senzilla"},
+                            {htmlQuery: this.serverIP + "especial", name: "Especial", description: "La configuració ha de ser la de testeig (5 LEDs en forma de W)"},
+                            {htmlQuery: this.serverIP + "offAll", name: "Apaga tots", description: "Apaga tots els LEDs configurats"},
+                            {htmlQuery: this.serverIP + "onAll", name: "Apaga tots", description: "Encen tots els LEDs configurats"}
+                        ]
             }
         } else {
             this.dataConfig = this.getRemoteConfig();
