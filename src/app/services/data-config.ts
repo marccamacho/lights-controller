@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
+import 'rxjs/add/operator/timeout'
 
 @Injectable()
 export class DataConfigService {
 
-    serverIP    : string = "http://192.168.0.122:5000/";  // Server IP
+    serverIP    : string = "http://localhost:5000/";  // Server IP
     dataConfig  : any;          // Configuration data in JSON format. See README.md.
     currentPage : string = "TAULA DE CONTROL";
 
-    constructor() {
-        if (this.serverIP != "") {
+    constructor(private httpclient: Http) {
+        /*if (this.serverIP == "") {
             this.dataConfig = {
                         typeTags: ["LED", "Fan", "Light Bulb", "Speaker"],
                         conf: {
@@ -30,12 +32,18 @@ export class DataConfigService {
             }
         } else {
             this.dataConfig = this.getRemoteConfig();
-        }
+        }*/
     }
 
     // Get configuration JSON from server
     getRemoteConfig () {
-        
+        console.log("HELLO!")
+        // Make the HTTP request:
+        this.httpclient.get(this.serverIP+"config")
+                        .subscribe(res => {
+                            console.log(res)
+                            //this.dataConfig = res._body;
+                        });
     }
 
     // Update configuration JSON from server
