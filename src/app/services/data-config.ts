@@ -25,6 +25,10 @@ export class DataConfigService {
                             {htmlQuery: this.serverIP + "rafaga?pins=3&pins=9&delay=0.5&times=10", name: "Rafaga", description: "Rafaga senzilla"},
                             {htmlQuery: this.serverIP + "especial", name: "Especial", description: "La configuració ha de ser la de testeig (5 LEDs en forma de W)"},
                             {htmlQuery: this.serverIP + "offAll", name: "Apaga tots", description: "Apaga tots els LEDs configurats"},
+                            {htmlQuery: this.serverIP + "onAll", name: "Apaga tots", description: "Encen tots els LEDs configurats"},
+                            {htmlQuery: this.serverIP + "rafaga?pins=3&pins=9&delay=0.5&times=10", name: "Rafaga", description: "Rafaga senzilla"},
+                            {htmlQuery: this.serverIP + "especial", name: "Especial", description: "La configuració ha de ser la de testeig (5 LEDs en forma de W)"},
+                            {htmlQuery: this.serverIP + "offAll", name: "Apaga tots", description: "Apaga tots els LEDs configurats"},
                             {htmlQuery: this.serverIP + "onAll", name: "Apaga tots", description: "Encen tots els LEDs configurats"}
                         ]
             }
@@ -35,7 +39,7 @@ export class DataConfigService {
 
     // Get configuration JSON from server
     getRemoteConfig () {
-        
+
     }
 
     // Update configuration JSON from server
