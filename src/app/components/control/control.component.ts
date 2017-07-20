@@ -38,13 +38,11 @@ export class ControlComponent implements OnInit {
 
             // Make the HTTP request:
             this.httpclient.get(crida)
-                .timeout(1000)
                 .subscribe(
                     (data) => {
                                 console.log("Resposta rebuda")
                                 this.dataService.dataConfig.conf[pin].active = true;
-                            },
-                    err => this.openSnackBar("Error en la connexió", "CLOSE")
+                            }
                 );
         } else{
             this.dataService.dataConfig.conf[pin].active = false;
@@ -54,13 +52,11 @@ export class ControlComponent implements OnInit {
 
             // Make the HTTP request:
             this.httpclient.get(crida)
-                .timeout(1000)
                 .subscribe(
                     (data) => {
                                 console.log("Resposta rebuda")
                                 this.dataService.dataConfig.conf[pin].active = false;
-                            },
-                    err => this.openSnackBar("Error en la connexió", "CLOSE")
+                            }
                 );
         }
     }
