@@ -255,6 +255,24 @@ var OutputDevice = (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/classes/program-query.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Program; });
+var Program = (function () {
+    function Program(htmlQuery, name, description) {
+        this.htmlQuery = htmlQuery;
+        this.name = name;
+        this.description = description;
+    }
+    return Program;
+}());
+
+//# sourceMappingURL=program-query.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/buttons-control/buttons-control.component.html":
 /***/ (function(module, exports) {
 
@@ -464,7 +482,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/control/control.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-tab-group>\n  <md-tab label=\"Manual\">\n      <div class=\"container-center\">\n          <div class=\"container-outputs\" style=\"float:left \">\n              <div *ngFor=\"let device of data.conf | getKeys\" class=\"icons\">\n                  <config-output *ngIf=\"data.conf[device].typeTag != undefined\"\n                                  [currentDevice]=\"data.conf[device]\"\n                                  (click)=\"toggleLED(data.conf[device].outputPin)\">\n                  </config-output>\n              </div>\n          </div>\n          <style>\n              #vertical-bar {\n                  border-left: 2px solid #ccc;\n                  width:3px;\n                  height:400px;\n              }\n          </style>\n\n          <div id=\"vertical-bar\"></div>\n\n          <div class=\"container-options\">\n              <h4 style=\" margin:10px\"> Control Múltiple </h4>\n              <div class=\"container-buttons\">\n                  <div>\n                       <md-radio-button value=\"2\">ON</md-radio-button>\n                  </div>\n                  <div>\n                       <md-radio-button value=\"1\">OFF</md-radio-button>\n                  </div>\n                  <div>\n                      <md-slider min=\"0\" max=\"100\" step=\"5\" thumbLabel tickInterval=\"1\"></md-slider>\n                  </div>\n              </div>\n          </div>\n      </div>\n\n  </md-tab>\n\n  <md-tab label=\"Automàtic\">...IN PROGRESS...</md-tab>\n\n</md-tab-group>\n"
+module.exports = "<md-tab-group>\n  <md-tab label=\"Manual\">\n      <div class=\"container-center\">\n          <div class=\"container-outputs\" style=\"float:left \">\n              <div *ngFor=\"let device of data.conf | getKeys\" class=\"icons\">\n                  <config-output *ngIf=\"data.conf[device].typeTag != undefined\"\n                                  [currentDevice]=\"data.conf[device]\"\n                                  (click)=\"toggleLED(data.conf[device].outputPin)\">\n                  </config-output>\n              </div>\n          </div>\n          <style>\n              #vertical-bar {\n                  border-left: 2px solid #ccc;\n                  width:3px;\n                  height:400px;\n              }\n          </style>\n\n          <div id=\"vertical-bar\"></div>\n\n          <div class=\"container-options\">\n              <h4 style=\" margin:10px\"> Control Múltiple </h4>\n              <div class=\"container-buttons\">\n                  <div>\n                       <md-radio-button value=\"2\">ON</md-radio-button>\n                  </div>\n                  <div>\n                       <md-radio-button value=\"1\">OFF</md-radio-button>\n                  </div>\n                  <div>\n                      <md-slider min=\"0\" max=\"100\" step=\"5\" thumbLabel tickInterval=\"1\"></md-slider>\n                  </div>\n              </div>\n          </div>\n      </div>\n\n  </md-tab>\n  <md-tab label=\"Automàtic\">\n      <div class=\"container-center\">\n          <div class=\"container-outputs\" style=\"float:left \">\n              <div *ngFor=\"let program of data.programs | getKeys\" class=\"icons\">\n                  <app-program  [currentProgram]=\"data.programs[program]\"\n                                  (click)=\"onProgram(data.programs[program])\">\n                  </app-program>\n              </div>\n          </div>\n      </div>\n    </md-tab>\n</md-tab-group>\n"
 
 /***/ }),
 
@@ -850,7 +868,7 @@ var _a;
 /***/ "../../../../../src/app/components/program/program.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  program works!\n</p>\n"
+module.exports = "\n<div class=\"custom-div\" >\n    <p>\n          <i class=\"material-icons program\">device_hub</i>\n    </p>\n    <p class=\"title\">{{currentProgram.name}}</p>\n</div>\n"
 
 /***/ }),
 
@@ -862,7 +880,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".custom-div {\n  min-height: 50px;\n  float: center;\n  width: 100px;\n  margin-top: 15px;\n  margin-bottom: 15px;\n  margin-left: 10px;\n  margin-right: 10px; }\n\n.program {\n  width: 80px; }\n\n.active {\n  fill: rgba(43, 189, 126, 0.54); }\n\n.inactive {\n  fill: rgba(0, 0, 0, 0.54); }\n\n.custom-div:hover {\n  color: #9fffe0; }\n\np {\n  text-align: center;\n  margin: 0; }\n\n.title {\n  color: rgba(0, 0, 0, 0.54);\n  font-family: 'Roboto', sans-serif;\n  font-size: 16px; }\n\n.subtitle {\n  color: rgba(0, 0, 0, 0.38);\n  font-size: 14px;\n  font-family: 'Roboto', sans-serif; }\n\n.icon {\n  height: 100px; }\n", ""]);
 
 // exports
 
@@ -877,6 +895,7 @@ module.exports = module.exports.toString();
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__classes_program_query__ = __webpack_require__("../../../../../src/app/classes/program-query.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProgramComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -888,6 +907,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var ProgramComponent = (function () {
     function ProgramComponent() {
     }
@@ -895,6 +915,10 @@ var ProgramComponent = (function () {
     };
     return ProgramComponent;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */])(),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__classes_program_query__["a" /* Program */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__classes_program_query__["a" /* Program */]) === "function" && _a || Object)
+], ProgramComponent.prototype, "currentProgram", void 0);
 ProgramComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-program',
@@ -904,6 +928,7 @@ ProgramComponent = __decorate([
     __metadata("design:paramtypes", [])
 ], ProgramComponent);
 
+var _a;
 //# sourceMappingURL=program.component.js.map
 
 /***/ }),

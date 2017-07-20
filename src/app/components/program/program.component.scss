@@ -1,0 +1,46 @@
+.custom-div{
+    min-height:50px;
+    float: center;
+    width: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.program{
+    width:80px;
+}
+
+.active{
+    fill: rgba(43, 189, 126, 0.54);
+}
+
+.inactive{
+    fill: rgba(0, 0, 0, 0.54);
+}
+
+.custom-div:hover{
+    color: #9fffe0;
+}
+
+p{
+    text-align: center;
+    margin: 0;
+}
+
+.title{
+    color: rgba(0,0,0,0.54);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.subtitle{
+    color: rgba(0,0,0,0.38);
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.icon{
+    height: 100px;
+}
