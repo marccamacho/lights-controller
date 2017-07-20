@@ -1,8 +1,7 @@
 
-<div class="custom-div" *ngIf = "currentDevice.typeTag == 'LED'; else other_content">
+<div class="custom-div" >
     <p>
-            <i class="material-icons">play_circle_outline</i>
+          <i class="material-icons program">device_hub</i>
     </p>
-    <p class="title">{{currentDevice.outputPin}}</p>
-    <p class="subtitle">{{currentDevice.name}}</p>
+    <p class="title">{{currentProgram.name}}</p>
 </div>
