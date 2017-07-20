@@ -10,7 +10,7 @@ import { DataConfigService }from './services/data-config';
 export class AppComponent {
 
     constructor(public dataService: DataConfigService) {
-
+        dataService.getRemoteConfig();
     }
 
     get title():string {
