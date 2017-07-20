@@ -33,6 +33,8 @@ export class ControlComponent implements OnInit {
     toggleLED(pin){
         if (!this.dataService.dataConfig.conf[pin].active) {      // Does not exist
 
+            this.dataService.dataConfig.conf[pin].active = true;
+
             // Crida HTTP per engegar el LED que està en el PIN: <pin>
             let crida  =  this.dataService.serverIP + "on?pins=" + pin;
 
@@ -41,7 +43,6 @@ export class ControlComponent implements OnInit {
                 .subscribe(
                     (data) => {
                                 console.log("Resposta rebuda")
-                                this.dataService.dataConfig.conf[pin].active = true;
                             }
                 );
         } else{
@@ -55,7 +56,6 @@ export class ControlComponent implements OnInit {
                 .subscribe(
                     (data) => {
                                 console.log("Resposta rebuda")
-                                this.dataService.dataConfig.conf[pin].active = false;
                             }
                 );
         }

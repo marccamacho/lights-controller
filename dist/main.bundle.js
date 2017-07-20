@@ -524,15 +524,14 @@ var ControlComponent = (function () {
         this.dataService.currentPage = "";
     };
     ControlComponent.prototype.toggleLED = function (pin) {
-        var _this = this;
         if (!this.dataService.dataConfig.conf[pin].active) {
+            this.dataService.dataConfig.conf[pin].active = true;
             // Crida HTTP per engegar el LED que està en el PIN: <pin>
             var crida = this.dataService.serverIP + "on?pins=" + pin;
             // Make the HTTP request:
             this.httpclient.get(crida)
                 .subscribe(function (data) {
                 console.log("Resposta rebuda");
-                _this.dataService.dataConfig.conf[pin].active = true;
             });
         }
         else {
@@ -543,7 +542,6 @@ var ControlComponent = (function () {
             this.httpclient.get(crida)
                 .subscribe(function (data) {
                 console.log("Resposta rebuda");
-                _this.dataService.dataConfig.conf[pin].active = false;
             });
         }
     };
