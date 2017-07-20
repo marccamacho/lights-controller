@@ -530,11 +530,10 @@ var ControlComponent = (function () {
             var crida = this.dataService.serverIP + "on?pins=" + pin;
             // Make the HTTP request:
             this.httpclient.get(crida)
-                .timeout(1000)
                 .subscribe(function (data) {
                 console.log("Resposta rebuda");
                 _this.dataService.dataConfig.conf[pin].active = true;
-            }, function (err) { return _this.openSnackBar("Error en la connexió", "CLOSE"); });
+            });
         }
         else {
             this.dataService.dataConfig.conf[pin].active = false;
@@ -542,11 +541,10 @@ var ControlComponent = (function () {
             var crida = this.dataService.serverIP + "off?pins=" + pin;
             // Make the HTTP request:
             this.httpclient.get(crida)
-                .timeout(1000)
                 .subscribe(function (data) {
                 console.log("Resposta rebuda");
                 _this.dataService.dataConfig.conf[pin].active = false;
-            }, function (err) { return _this.openSnackBar("Error en la connexió", "CLOSE"); });
+            });
         }
     };
     ControlComponent.prototype.openSnackBar = function (message, action) {
