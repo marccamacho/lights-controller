@@ -739,7 +739,7 @@ LoginComponent = __decorate([
 /***/ "../../../../../src/app/components/makers/makers.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"height:100%;width:960px;\">\n  <div style=\"float:left;height:100%\">\n    <p><img style=\"float:left;\" src=\"./assets/images/jpg/makers.jpg\"></p>\n  </div>\n  <div style=\"float:right;width:50%;height:100%;\">\n    <div class=\"mat-typography\" style=\" line-height:200%; text-align: justify;\">\n        <p>Nosaltres som la Marta, en Guillem R, en Guillem C, en Giancarlo,\n        l’Arnau, en David, en Marc i la Gemma, i vam fer el Camp de Treball Maker durant l'estiu 2017.\n\n        En aquest camp vam crear un nou sistema per al control de les llums\n        d’un teatre.\n\n        Controlem les llums fent servir una aplicació web programada amb Angular 2 fent ús del Material Design.\n        Aquesta aplicació web es comunica amb una Raspberry que controla els relés per engegar i apagar les llums.\n\n        Ens hem repartit la feina en dues parts:</p>\n        <ul>\n                       <li>la instal·lació elèctrica</li>\n                       <li>la programació web i del servidor de la Raspberry</li>\n        </ul>\n        <p>Vam tenir aquesta idea ja que en el nostre col·legi, hi ha un quadre de llums\n        i el voliem modernitzar.\n        El camp de treball ha durat 3 setmanes, i aquest en ha donat una oportunitat per\n        aprendre i mouren’s millor per aquest món tecnològic.\n      </p>\n      </div>\n  </div>\n\n</div>\n"
+module.exports = "<div style=\"height:100%;width:960px;\">\n  <div class=\"mat-typography\" style=\"line-height:150%; font-size: 16px;\">\n        <p style=\"text-align: center;\"> <img src=\"./assets/images/jpg/makers.jpg\"> </p>\n        <p>Nosaltres som la Marta, en Guillem R, en Guillem C, en Giancarlo,\n        l’Arnau, en David, en Marc i la Gemma, i vam fer el Camp de Treball Maker durant l'estiu 2017.\n\n        En aquest camp vam crear un nou sistema per al control de les llums\n        d’un teatre.\n\n        Controlem les llums fent servir una aplicació web programada amb Angular 2 fent ús del Material Design.\n        Aquesta aplicació web es comunica amb una Raspberry que controla els relés per engegar i apagar les llums.\n\n        Ens hem repartit la feina en dues parts:</p>\n        <ul>\n                       <li>la instal·lació elèctrica</li>\n                       <li>la programació web i del servidor de la Raspberry</li>\n        </ul>\n        <p>Vam tenir aquesta idea ja que en el nostre col·legi, hi ha un quadre de llums\n        i el voliem modernitzar.\n        El camp de treball ha durat 3 setmanes, i aquest en ha donat una oportunitat per\n        aprendre i mouren’s millor per aquest món tecnològic.\n      </p>\n  </div>\n\n</div>\n"
 
 /***/ }),
 
@@ -751,7 +751,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "img {\n  width: 300px;\n  position: absolute;\n  top: 190px;\n  left: 200px; }\n\n.md-grid-tile {\n  background-color: blue; }\n", ""]);
+exports.push([module.i, "img {\n  width: 500px;\n  text-align: center; }\n\np {\n  text-align: justify; }\n\n.md-grid-tile {\n  background-color: blue; }\n", ""]);
 
 // exports
 
