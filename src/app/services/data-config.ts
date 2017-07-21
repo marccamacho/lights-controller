@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/timeout'
+import {Observable} from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class DataConfigService {
@@ -36,14 +40,15 @@ export class DataConfigService {
     }
 
     // Get configuration JSON from server
-    getRemoteConfig () {
-        console.log("HELLO!")
-        // Make the HTTP request:
-        this.httpclient.get(this.serverIP+"config")
-                        .subscribe(res => {
-                            console.log(res)
-                            //this.dataConfig = res._body;
-                        });
+    public getRemoteConfig(): Promise<any> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+
+        const promise = this.httpclient.get(this.serverIP+"config", { headers }).map((res) => res.json()).toPromise();
+        promise.then(config => {
+            this.dataConfig = config;     // <--- THIS RESOLVES AFTER
+            console.log(this.dataConfig);
+        });
+      return promise;
     }
 
     // Update configuration JSON from server

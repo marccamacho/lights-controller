@@ -59,7 +59,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AppComponent = (function () {
     function AppComponent(dataService) {
         this.dataService = dataService;
-        dataService.getRemoteConfig();
     }
     Object.defineProperty(AppComponent.prototype, "title", {
         get: function () {
@@ -110,6 +109,7 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_data_config__ = __webpack_require__("../../../../../src/app/services/data-config.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pipes_get_keys_pipe__ = __webpack_require__("../../../../../src/app/pipes/get-keys.pipe.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_program_program_component__ = __webpack_require__("../../../../../src/app/components/program/program.component.ts");
+/* unused harmony export init */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -143,6 +143,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 // Pipes
 
 
+function init(dataConfig) {
+    return function () {
+        return dataConfig.getRemoteConfig(); // add return
+    };
+}
 var AppModule = (function () {
     function AppModule() {
     }
@@ -174,7 +179,15 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */]
         ],
         entryComponents: [__WEBPACK_IMPORTED_MODULE_9__components_config_outputs_config_outputs_component__["b" /* DialogConfigComponent */]],
-        providers: [__WEBPACK_IMPORTED_MODULE_17__services_data_config__["a" /* DataConfigService */]],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_17__services_data_config__["a" /* DataConfigService */],
+            {
+                provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["c" /* APP_INITIALIZER */],
+                useFactory: init,
+                deps: [__WEBPACK_IMPORTED_MODULE_17__services_data_config__["a" /* DataConfigService */]],
+                multi: true
+            }
+        ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -584,7 +597,7 @@ ControlComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/control/control.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/control/control.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_data_config__["a" /* DataConfigService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_data_config__["a" /* DataConfigService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["d" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["d" /* MdSnackBar */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_data_config__["a" /* DataConfigService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_data_config__["a" /* DataConfigService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["d" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["d" /* MdSnackBar */]) === "function" && _c || Object])
 ], ControlComponent);
 
 var _a, _b, _c;
@@ -1038,6 +1051,12 @@ GetKeysPipe = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_timeout__ = __webpack_require__("../../../../rxjs/add/operator/timeout.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_timeout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_timeout__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_toPromise__ = __webpack_require__("../../../../rxjs/add/operator/toPromise.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_toPromise__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataConfigService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1048,6 +1067,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
 
 
 
@@ -1082,13 +1104,14 @@ var DataConfigService = (function () {
     }
     // Get configuration JSON from server
     DataConfigService.prototype.getRemoteConfig = function () {
-        console.log("HELLO!");
-        // Make the HTTP request:
-        this.httpclient.get(this.serverIP + "config")
-            .subscribe(function (res) {
-            console.log(res);
-            //this.dataConfig = res._body;
+        var _this = this;
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
+        var promise = this.httpclient.get(this.serverIP + "config", { headers: headers }).map(function (res) { return res.json(); }).toPromise();
+        promise.then(function (config) {
+            _this.dataConfig = config; // <--- THIS RESOLVES AFTER
+            console.log(_this.dataConfig);
         });
+        return promise;
     };
     // Update configuration JSON from server
     DataConfigService.prototype.putRemoteConfig = function () {
@@ -1107,8 +1130,8 @@ var DataConfigService = (function () {
     return DataConfigService;
 }());
 DataConfigService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
 ], DataConfigService);
 
 var _a;
