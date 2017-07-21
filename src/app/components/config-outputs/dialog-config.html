@@ -25,7 +25,7 @@
     <div class="option-form md-dialog-content">
         <span class="placeh">Nom </span>
         <md-input-container style="width:70%">
-            <input  mdInput  [value]="name" [(ngModel)]="device.name" name="name2" class="mat-input-element">
+            <input  mdInput [maxlength]="9" [value]="name" [(ngModel)]="device.name" name="name2" class="mat-input-element">
         </md-input-container>
     </div>
 
@@ -33,7 +33,7 @@
     <div class="option-form md-dialog-content">
         <span class="placeh">Descripció</span>
         <md-input-container style="width:70%">
-            <input mdInput [value]="description"  [(ngModel)]="device.description" name="description" class="mat-input-element">
+            <input mdInput [maxlength]="10" [value]="description"  [(ngModel)]="device.description" name="description" class="mat-input-element">
         </md-input-container>
     </div>
 
