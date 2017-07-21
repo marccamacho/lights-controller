@@ -1,6 +1,6 @@
 // Needed modules
 import { BrowserModule }            from '@angular/platform-browser';
-import { NgModule }                 from '@angular/core';
+import { NgModule, APP_INITIALIZER }from '@angular/core';
 import { Router }                   from '@angular/router';
 import { AppComponent }             from './app.component';
 import { HttpModule }               from '@angular/http';
@@ -30,6 +30,12 @@ import { DataConfigService }        from './services/data-config';
 import { GetKeysPipe }              from './pipes/get-keys.pipe';
 import { ProgramComponent } from './components/program/program.component';
 
+export function init(dataConfig: DataConfigService) {
+  return () => {
+    return dataConfig.getRemoteConfig(); // add return
+  };
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +61,15 @@ import { ProgramComponent } from './components/program/program.component';
     HttpModule
   ],
   entryComponents: [ DialogConfigComponent ],
-  providers: [ DataConfigService ],
+  providers: [
+      DataConfigService,
+      {
+        provide: APP_INITIALIZER,
+        useFactory: init,
+        deps: [DataConfigService],
+        multi: true
+      }
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {

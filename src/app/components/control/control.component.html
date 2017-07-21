@@ -37,7 +37,15 @@
       </div>
 
   </md-tab>
-
-  <md-tab label="Automàtic">...IN PROGRESS...</md-tab>
-
+  <md-tab label="Automàtic">
+      <div class="container-center">
+          <div class="container-programs" style="float:left ">
+              <div *ngFor="let program of data.programs | getKeys" class="icons">
+                  <app-program  [currentProgram]="data.programs[program]"
+                                  (click)="onProgram(data.programs[program])">
+                  </app-program>
+              </div>
+          </div>
+      </div>
+    </md-tab>
 </md-tab-group>

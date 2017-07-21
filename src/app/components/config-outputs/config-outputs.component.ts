@@ -48,6 +48,7 @@ export class ConfigOutputsComponent implements OnInit {
         instance.device = selectedDevice;
 
         dialogRef.afterClosed().subscribe(result => {
+            this.dataService.putRemoteConfig();
         });
     }
 }
@@ -65,10 +66,11 @@ export class DialogConfigComponent {
     constructor(public dialogRef: MdDialogRef<any>) {
     }
 
-    closeDialog() {
+    save() {
       this.dialogRef.close();
       this.dataConfig.conf[this.device.outputPin] = this.device;
     }
+
     close() {
       this.dialogRef.close();
     }

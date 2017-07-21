@@ -1,5 +1,6 @@
 import { Component, OnInit }    from '@angular/core';
 import { MdSnackBar } from '@angular/material';
+import { ProgramComponent } from '../program/program.component'
 
 import { DataConfigService }    from '../../services/data-config';
 import { GetKeysPipe }          from '../../pipes/get-keys.pipe';
