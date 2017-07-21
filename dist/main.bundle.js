@@ -751,7 +751,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "img {\n  width: 350px;\n  position: absolute;\n  top: 190px;\n  left: 200px; }\n\n.md-grid-tile {\n  background-color: blue; }\n", ""]);
+exports.push([module.i, "img {\n  width: 300px;\n  position: absolute;\n  top: 190px;\n  left: 200px; }\n\n.md-grid-tile {\n  background-color: blue; }\n", ""]);
 
 // exports
 
