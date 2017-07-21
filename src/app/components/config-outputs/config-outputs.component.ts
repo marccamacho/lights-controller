@@ -67,12 +67,12 @@ export class DialogConfigComponent {
     }
 
     save() {
-      this.dialogRef.close();
-      this.dataConfig.conf[this.device.outputPin] = this.device;
+        this.dataConfig.conf[this.device.outputPin] = this.device;
+        this.dialogRef.close();
     }
 
     close() {
-      this.dialogRef.close();
+        this.dialogRef.close();
     }
 
     delete() {

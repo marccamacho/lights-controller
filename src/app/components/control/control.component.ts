@@ -62,6 +62,16 @@ export class ControlComponent implements OnInit {
         }
     }
 
+    onProgram(crida){
+        console.log(crida)
+        this.httpclient.get(crida)
+            .subscribe(
+                (data) => {
+                    console.log("Resposta rebuda");
+                }
+            );
+    }
+
     openSnackBar(message: string, action: string) {
       this.snackBar.open(message, action, {
         duration: 2000,

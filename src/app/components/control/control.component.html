@@ -41,7 +41,7 @@
           <div class="container-programs" style="float:left ">
               <div *ngFor="let program of data.programs | getKeys" class="icons">
                   <app-program  [currentProgram]="data.programs[program]"
-                                  (click)="onProgram(data.programs[program])">
+                                  (click)="onProgram(data.programs[program].htmlQuery)">
                   </app-program>
               </div>
           </div>
