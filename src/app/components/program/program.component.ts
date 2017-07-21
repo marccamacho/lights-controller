@@ -7,10 +7,25 @@ import { Program } from '../../classes/program-query';
   styleUrls: ['./program.component.scss']
 })
 export class ProgramComponent implements OnInit {
-  @Input() currentProgram:Program;        
-  constructor() { }
+  currentColor: string;
+
+  @Input() currentProgram: Program;
+  @Input () changeColor: boolean = true;
+
+  constructor() {
+      this.currentColor = "rgba(0, 0, 0, 0.54)";
+  }
 
   ngOnInit() {
+    console.log(this.currentProgram);
+  }
+
+  toggleColor() {
+          return "inactive";
+      // if (this.changeColor) {
+      //     if (this.currentProgram)   return "inactive";
+      //     else                             return "inactive";
+      // } else return "inactive"
   }
 
 }

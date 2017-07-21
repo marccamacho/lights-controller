@@ -38,7 +38,7 @@
   </md-tab>
   <md-tab label="Automàtic">
       <div class="container-center">
-          <div class="container-outputs" style="float:left ">
+          <div class="container-programs" style="float:left ">
               <div *ngFor="let program of data.programs | getKeys" class="icons">
                   <app-program  [currentProgram]="data.programs[program]"
                                   (click)="onProgram(data.programs[program])">
