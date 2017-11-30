@@ -10,9 +10,7 @@ import { ControlComponent }         from './components/control/control.component
 // Configuración de las rutas
 const appRoutes: Routes = [
     { path: '',             component: ControlComponent },
-//    { path: 'output',       component: OutputComponent },
     { path: 'outputs',      component: ConfigOutputsComponent },
-//    { path: 'programable',  component: ProgramableComponent },
     { path: 'makers',       component: MakersComponent },
     { path: '404',          redirectTo: ''},
     { path: '**',           redirectTo: ''}

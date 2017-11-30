@@ -7,7 +7,17 @@ import { HttpModule }               from '@angular/http';
 
 // Material Imports
 import { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
-import { MaterialModule }           from '@angular/material';
+import { MatSliderModule }          from '@angular/material/slider';
+import { MatSelectModule }          from '@angular/material/select';
+import { MatIconModule }            from '@angular/material/icon';
+import { MatTabsModule }            from '@angular/material/tabs';
+import { MatSidenavModule }         from '@angular/material/sidenav';
+import { MatToolbarModule }         from '@angular/material/toolbar';
+import { MatDialogModule }          from '@angular/material/dialog';
+import { MatSnackBarModule }        from '@angular/material/snack-bar';
+import { MatListModule }            from '@angular/material/list';
+import { MatButtonModule }          from '@angular/material/button';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import 'hammerjs';
 
@@ -54,7 +64,8 @@ export function init(dataConfig: DataConfigService) {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    MatSliderModule, MatSelectModule, MatTabsModule, MatSnackBarModule, MatButtonModule,
+    MatSidenavModule, MatToolbarModule, MatDialogModule, MatIconModule, MatListModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

@@ -1,11 +1,11 @@
-import { Component, OnInit }    from '@angular/core';
-import { OutputDevice }         from '../../classes/output-device'
+import { Component, OnInit }        from '@angular/core';
+import { OutputDevice }             from '../../classes/output-device'
 
-import { OutputComponent }  from '../output/output.component';
+import { OutputComponent }          from '../output/output.component';
 
-import { DataConfigService }    from '../../services/data-config';
-import { GetKeysPipe }          from '../../pipes/get-keys.pipe';
-import { MdDialog, MdDialogRef } from '@angular/material';
+import { DataConfigService }        from '../../services/data-config';
+import { GetKeysPipe }              from '../../pipes/get-keys.pipe';
+import { MatDialog, MatDialogRef }  from '@angular/material/dialog';
 
 @Component({
     selector: 'config-outputs',
@@ -15,7 +15,7 @@ import { MdDialog, MdDialogRef } from '@angular/material';
 
 export class ConfigOutputsComponent implements OnInit {
 
-    constructor(public dataService: DataConfigService, public dialog: MdDialog) {
+    constructor(public dataService: DataConfigService, public dialog: MatDialog) {
 
     }
 
@@ -63,7 +63,7 @@ export class DialogConfigComponent {
     device: OutputDevice;
     dataConfig: any;
 
-    constructor(public dialogRef: MdDialogRef<any>) {
+    constructor(public dialogRef: MatDialogRef<any>) {
     }
 
     save() {

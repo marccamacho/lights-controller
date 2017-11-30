@@ -1,26 +1,25 @@
-<md-sidenav-container>
+<mat-sidenav-container>
 
     <!-- SIDENAV CONTENT -->
-    <md-sidenav #sidenav  class="container-sidenav">
-            <md-nav-list class="custom-nav">
+    <mat-sidenav #sidenav  class="container-sidenav">
+            <mat-nav-list class="custom-nav">
                     <div class="text-icon-container">
                             <i class="material-icons">build</i> <span class="mat-display-1 title-nav"> TAULA DE CONTROL</span>
                     </div>
-                    <md-divider> </md-divider>
-                    <a md-list-item routerLink="/control"       (click) = "sidenav.toggle()">Control de llums</a>
-                    <a md-list-item routerLink="/outputs"       (click) = "sidenav.toggle()">Configuració</a>
-                    <!-- <a md-list-item routerLink="/programable"   (click) = "sidenav.toggle()">Programació</a> -->
-                    <a md-list-item routerLink="/makers"        (click) = "sidenav.toggle()">Qui l'ha fet?</a>
-            </md-nav-list>
-    </md-sidenav>
+                    <mat-divider> </mat-divider>
+                    <a mat-list-item routerLink="/control"       (click) = "sidenav.toggle()">Control de llums</a>
+                    <a mat-list-item routerLink="/outputs"       (click) = "sidenav.toggle()">Configuració</a>
+                    <a mat-list-item routerLink="/makers"        (click) = "sidenav.toggle()">Qui l'ha fet?</a>
+            </mat-nav-list>
+    </mat-sidenav>
 
     <!-- REST OF PAGE CONTENT -->
-    <md-toolbar color="primary" class="mat-elevation-z4">
-            <button md-icon-button (click)="sidenav.toggle()">
+    <mat-toolbar color="primary" class="mat-elevation-z4">
+            <button mat-icon-button (click)="sidenav.toggle()">
                 <i class="material-icons" style="margin-bottom:2px;">menu</i>
             </button>￼
             <span class="title-toolbar"> {{title}} </span>
-    </md-toolbar>
+    </mat-toolbar>
 
     <!-- CONTENT OF THE WEB -->
     <div class="container-content">
@@ -30,4 +29,4 @@
     <!-- FOOTER -->
     <app-footer> </app-footer>
 
-</md-sidenav-container>
+</mat-sidenav-container>

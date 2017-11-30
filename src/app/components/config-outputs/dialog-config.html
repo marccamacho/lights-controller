@@ -3,38 +3,38 @@
     <!-- TIPUS -->
     <div class="option-form md-dialog-content">
         <span class="placeh">Tipus de sortida</span>
-        <md-select [(ngModel)]="device.typeTag" name="tag" id="select">
-            <md-option *ngFor="let type of dataConfig.typeTags" [value]="type">
+        <mat-select [(ngModel)]="device.typeTag" name="tag" id="select">
+            <mat-option *ngFor="let type of dataConfig.typeTags" [value]="type">
                 {{type}}
-            </md-option>
-        </md-select>
+            </mat-option>
+        </mat-select>
         <br><br>
     </div>
 
     <!-- OUTPUT PIN -->
     <div class="option-form md-dialog-content">
         <span class="placeh">PIN de sortida</span>
-        <md-select  [(ngModel)]="device.outputPin" name="pin">
-            <md-option *ngFor="let pin of dataConfig.conf | getKeys" [value]="pin">
+        <mat-select  [(ngModel)]="device.outputPin" name="pin">
+            <mat-option *ngFor="let pin of dataConfig.conf | getKeys" [value]="pin">
                 {{pin}}
-            </md-option>
-        </md-select>
+            </mat-option>
+        </mat-select>
     </div>
 
     <!-- NOM -->
     <div class="option-form md-dialog-content">
         <span class="placeh">Nom </span>
-        <md-input-container style="width:70%">
+        <mat-input-container style="width:70%">
             <input  mdInput [maxlength]="9" [value]="name" [(ngModel)]="device.name" name="name2" class="mat-input-element">
-        </md-input-container>
+        </mat-input-container>
     </div>
 
     <!-- DESCRIPCIÓ -->
     <div class="option-form md-dialog-content">
         <span class="placeh">Descripció</span>
-        <md-input-container style="width:70%">
+        <mat-input-container style="width:70%">
             <input mdInput [maxlength]="10" [value]="description"  [(ngModel)]="device.description" name="description" class="mat-input-element">
-        </md-input-container>
+        </mat-input-container>
     </div>
 
     <!-- BOTONS D'ACCIÓ -->

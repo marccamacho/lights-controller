@@ -9,7 +9,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class DataConfigService {
 
-    serverIP    : string = "http://192.168.0.122:5000/";  // Server IP
+    serverIP    : string = "http://lights-controller.local:5000/";  // Server IP
     dataConfig  : any;          // Configuration data in JSON format. See README.md.
     currentPage : string = "TAULA DE CONTROL";
 
@@ -21,10 +21,12 @@ export class DataConfigService {
         let headers = new Headers({ 'Content-Type': 'application/json' });
 
         const promise = this.httpclient.get(this.serverIP+"config", { headers }).map((res) => res.json()).toPromise();
-        promise.then(config => {
-            this.dataConfig = config;     // <--- THIS RESOLVES AFTER
-            console.log(this.dataConfig);
-        });
+        promise
+            .then(config => {
+                this.dataConfig = config;     // <--- THIS RESOLVES AFTER
+                console.log(this.dataConfig);
+            })
+            .catch((error) => { console.log(error); });
       return promise;
     }
 

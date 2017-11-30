@@ -1,6 +1,6 @@
 import { Component, OnInit }    from '@angular/core';
-import { MdSnackBar } from '@angular/material';
-import { ProgramComponent } from '../program/program.component'
+import { MatSnackBar }          from '@angular/material/snack-bar';
+import { ProgramComponent }     from '../program/program.component'
 
 import { DataConfigService }    from '../../services/data-config';
 import { GetKeysPipe }          from '../../pipes/get-keys.pipe';
@@ -19,7 +19,7 @@ export class ControlComponent implements OnInit {
     outputs = [];           // Selected OUTPUTS
     resultsHTTP :string[];
 
-    constructor(public dataService: DataConfigService, private httpclient: Http, public snackBar: MdSnackBar) {
+    constructor(public dataService: DataConfigService, private httpclient: Http, public snackBar: MatSnackBar) {
 
     }
 
