@@ -9,7 +9,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class DataConfigService {
 
-    serverIP    : string = "http://lights-controller.local:5000/";  // Server IP
+    serverIP    : string = "http://localhost:5000/";  // Server IP
     dataConfig  : any;          // Configuration data in JSON format. See README.md.
     currentPage : string = "TAULA DE CONTROL";
 
