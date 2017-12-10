@@ -1,10 +1,10 @@
 <div class="add">
-    <button md-fab (click)="open(undefined)" > <i class="material-icons">add</i> </button>
+    <button mat-fab (click)="open(undefined)" > <i class="material-icons">add</i> </button>
 </div>
 
 <div class="container-outputs">
     <div *ngFor="let device of data.conf | getKeys" class="icons">
-        <config-output *ngIf="data.conf[device].typeTag != undefined"
+        <config-output *ngIf="data.conf[device].type != undefined"
                         [currentDevice]="data.conf[device]"
                         [changeColor] = "false"
                         (click) = "open(data.conf[device])">

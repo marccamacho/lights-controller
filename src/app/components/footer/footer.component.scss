@@ -1,23 +1,14 @@
 .custom-footer{
-    position: fixed;
-    bottom: 0;
-    width:100%;
     background-color:#bc477b;
     color:#fff;
     font-weight: 400;
+    height: 30px;
+    width: 100%;
 }
 
 .footer-text{
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
-}
-
-.container-text {
-    // Center icons and text vertically
-    height:30px;
-    align-items: center;
-    display: flex;
-    margin-left: 15px;
 }
 
 .custom-footer i{

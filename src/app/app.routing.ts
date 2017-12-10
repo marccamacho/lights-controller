@@ -12,6 +12,7 @@ const appRoutes: Routes = [
     { path: '',             component: ControlComponent },
     { path: 'outputs',      component: ConfigOutputsComponent },
     { path: 'makers',       component: MakersComponent },
+    { path: 'develop',      component: ProgramableComponent},
     { path: '404',          redirectTo: ''},
     { path: '**',           redirectTo: ''}
 ];

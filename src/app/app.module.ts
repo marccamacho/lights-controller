@@ -8,7 +8,6 @@ import { HttpModule }               from '@angular/http';
 // Material Imports
 import { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
 import { MatSliderModule }          from '@angular/material/slider';
-import { MatSelectModule }          from '@angular/material/select';
 import { MatIconModule }            from '@angular/material/icon';
 import { MatTabsModule }            from '@angular/material/tabs';
 import { MatSidenavModule }         from '@angular/material/sidenav';
@@ -17,6 +16,11 @@ import { MatDialogModule }          from '@angular/material/dialog';
 import { MatSnackBarModule }        from '@angular/material/snack-bar';
 import { MatListModule }            from '@angular/material/list';
 import { MatButtonModule }          from '@angular/material/button';
+import { MatSelectModule }          from '@angular/material/select';
+import { MatInputModule }           from '@angular/material/input';
+import { MatFormFieldModule }       from '@angular/material/form-field';
+
+import { FlexLayoutModule }         from "@angular/flex-layout";
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import 'hammerjs';
@@ -42,7 +46,8 @@ import { ProgramComponent } from './components/program/program.component';
 
 export function init(dataConfig: DataConfigService) {
   return () => {
-    return dataConfig.getRemoteConfig(); // add return
+      if (dataConfig.debug) return dataConfig.getLocalConfig();
+      else return dataConfig.getRemoteConfig();
   };
 }
 
@@ -66,7 +71,9 @@ export function init(dataConfig: DataConfigService) {
     BrowserAnimationsModule,
     MatSliderModule, MatSelectModule, MatTabsModule, MatSnackBarModule, MatButtonModule,
     MatSidenavModule, MatToolbarModule, MatDialogModule, MatIconModule, MatListModule,
+    MatFormFieldModule, MatInputModule,
     AppRoutingModule,
+    FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule

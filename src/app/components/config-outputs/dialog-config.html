@@ -1,44 +1,52 @@
-<h1 md-dialog-title style="padding:10px;"> DETALLS DE CONFIGURACIÓ D'UNA SORTIDA </h1>
-<form>
-    <!-- TIPUS -->
-    <div class="option-form md-dialog-content">
-        <span class="placeh">Tipus de sortida</span>
-        <mat-select [(ngModel)]="device.typeTag" name="tag" id="select">
+<h1 mat-dialog-title style="padding:10px;"> DETALLS DE CONFIGURACIÓ D'UNA SORTIDA </h1>
+
+<!-- TIPUS -->
+<div class="option-form mat-dialog-content">
+    <span class="placeh">Tipus de sortida</span>
+    <mat-form-field style="width:40%;">
+        <mat-select [(ngModel)]="device.type" name="type">
             <mat-option *ngFor="let type of dataConfig.typeTags" [value]="type">
                 {{type}}
             </mat-option>
         </mat-select>
-        <br><br>
-    </div>
+    </mat-form-field>
+</div>
 
+<!-- OUTPUT PIN -->
+<div class="option-form mat-dialog-content">
     <!-- OUTPUT PIN -->
-    <div class="option-form md-dialog-content">
-        <span class="placeh">PIN de sortida</span>
-        <mat-select  [(ngModel)]="device.outputPin" name="pin">
+    <span class="placeh">PIN de sortida</span>
+    <mat-form-field style="width:40%;">
+        <mat-select [(ngModel)]="device.outputPin" name="pin">
             <mat-option *ngFor="let pin of dataConfig.conf | getKeys" [value]="pin">
                 {{pin}}
             </mat-option>
         </mat-select>
-    </div>
+    </mat-form-field>
+</div>
 
-    <!-- NOM -->
-    <div class="option-form md-dialog-content">
-        <span class="placeh">Nom </span>
-        <mat-input-container style="width:70%">
-            <input  mdInput [maxlength]="9" [value]="name" [(ngModel)]="device.name" name="name2" class="mat-input-element">
-        </mat-input-container>
-    </div>
+<!-- NOM -->
+<div class="option-form mat-dialog-content">
+    <span class="placeh">Nom </span>
+    <mat-input-container style="width:60%">
+        <input  matInput
+                [maxlength]="9"
+                [value]="name"
+                [(ngModel)]="device.name"
+                name="name"
+                class="mat-input-element">
+    </mat-input-container>
+</div>
 
-    <!-- DESCRIPCIÓ -->
-    <div class="option-form md-dialog-content">
-        <span class="placeh">Descripció</span>
-        <mat-input-container style="width:70%">
-            <input mdInput [maxlength]="10" [value]="description"  [(ngModel)]="device.description" name="description" class="mat-input-element">
-        </mat-input-container>
-    </div>
+<!-- DESCRIPCIÓ -->
+<div class="option-form mat-dialog-content">
+    <span class="placeh">Descripció</span>
+    <mat-input-container style="width:60%">
+        <input  matInput [maxlength]="10" [value]="description"  [(ngModel)]="device.description" name="description" class="mat-input-element">
+    </mat-input-container>
+</div>
 
-    <!-- BOTONS D'ACCIÓ -->
-    <button md-button (click)="delete()" class="tbutton"> ELIMINAR </button>
-    <button md-button (click)="close()" id="cancel" class="tbutton"> CANCELAR </button>
-    <button md-button (click)="save()" class="flat tbutton"> DESAR </button>
-</form>
+<!-- BOTONS D'ACCIÓ -->
+<button mat-button (click)="delete()" class="tbutton"> ELIMINAR </button>
+<button mat-button (click)="close()" id="cancel" class="tbutton"> CANCELAR </button>
+<button mat-button (click)="save()" class="flat tbutton"> DESAR </button>

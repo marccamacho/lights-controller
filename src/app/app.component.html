@@ -3,7 +3,7 @@
     <!-- SIDENAV CONTENT -->
     <mat-sidenav #sidenav  class="container-sidenav">
             <mat-nav-list class="custom-nav">
-                    <div class="text-icon-container">
+                    <div class="text-icon-container" fxLayout="row" fxLayoutAlign="center center">
                             <i class="material-icons">build</i> <span class="mat-display-1 title-nav"> TAULA DE CONTROL</span>
                     </div>
                     <mat-divider> </mat-divider>
@@ -13,20 +13,21 @@
             </mat-nav-list>
     </mat-sidenav>
 
-    <!-- REST OF PAGE CONTENT -->
-    <mat-toolbar color="primary" class="mat-elevation-z4">
-            <button mat-icon-button (click)="sidenav.toggle()">
-                <i class="material-icons" style="margin-bottom:2px;">menu</i>
-            </button>￼
-            <span class="title-toolbar"> {{title}} </span>
-    </mat-toolbar>
+    <div  fxLayout="column" fxLayoutAlign="center">
+        <!-- REST OF PAGE CONTENT -->
+        <mat-toolbar color="primary" class="mat-elevation-z4">
+                <button mat-icon-button (click)="sidenav.toggle()">
+                    <i class="material-icons" style="margin-bottom:2px;">menu</i>
+                </button>￼
+                <span class="title-toolbar"> {{title}} </span>
+        </mat-toolbar>
 
-    <!-- CONTENT OF THE WEB -->
-    <div class="container-content">
-        <router-outlet></router-outlet>
+        <!-- CONTENT OF THE WEB -->
+        <div class="container-content" fxLayout="column" fxLayoutAlign="center center">
+            <router-outlet></router-outlet>
+        </div>
+
+        <!-- FOOTER -->
+        <app-footer> </app-footer>
     </div>
-
-    <!-- FOOTER -->
-    <app-footer> </app-footer>
-
 </mat-sidenav-container>

@@ -35,25 +35,6 @@
     color:white;
 }
 
-// MARC STYLES
-//
-// .custom-nav a{
-//     margin:10px;
-//     border-radius:5px;
-//     margin: 10px;
-//     border-bottom-width: thin;
-//     border-bottom-style: solid;
-//     border-bottom-color:#fff;
-// }
-//
-// .custom-nav a:hover{
-//     border-bottom-color: #ff1744;
-//     border-bottom-width: thin;
-//     border-bottom-style: solid;
-//     background: none;
-//     color:#ff1744;
-// }
-
 .mat-list-item-focus{
     // background: rgba(255,23,68,0.04)!important;
     // color:#ff1744;
@@ -63,18 +44,13 @@
 // CONTENT STYLES
 .container-content{
     margin: 20px;
-    align-items: center;
-    justify-content:center;
-    display: flex;
-    height:calc(100vh - 134px);
+    min-height: calc(100vh - 134px);
 }
 
 // STUFF STYLES
 .text-icon-container {
-    align-items: center;
-    justify-content:center;
-    display: flex;
-    width:100%;
-    background-color: #2bbd7e;
-    color:white;
+    height:             64px;
+    width:              100%;
+    background-color:   #2bbd7e;
+    color:              white;
 }

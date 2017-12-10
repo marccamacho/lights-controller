@@ -10,27 +10,10 @@
     float:left;
 }
 
-.container-center{
-    margin: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 98%;
-    justify-content: space-between;
-}
-
 .container-outputs{
+    width: 90vw;
     max-width: 960px;
-}
-.container-programs{
-    margin-top:67px;
-    margin-bottom:67px;
-    margin-left:20px;
-}
-
-md-tab-group{
-    width: 960px;
+    float:     left;
 }
 
 /deep/

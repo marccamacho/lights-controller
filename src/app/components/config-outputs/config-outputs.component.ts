@@ -43,7 +43,7 @@ export class ConfigOutputsComponent implements OnInit {
 
         // Init object in DialogConfigComponent to solve errors modifying objects
         if (selectedDevice == undefined){
-            selectedDevice = {typeTag:"", outputPin:"", name:"", description:""};
+            selectedDevice = {type:"", outputPin:"", name:"", description:""};
         }
         instance.device = selectedDevice;
 

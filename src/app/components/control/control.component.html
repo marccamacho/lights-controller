@@ -1,51 +1,21 @@
-<mat-tab-group>
-  <mat-tab label="Manual">
-      <div class="container-center">
-          <div class="container-outputs" style="float:left ">
-              <div *ngFor="let device of data.conf | getKeys" class="icons">
-                  <config-output *ngIf="data.conf[device].typeTag != undefined"
-                                  [currentDevice]="data.conf[device]"
-                                  (click)="toggleLED(data.conf[device].outputPin)">
-                  </config-output>
-              </div>
-          </div>
-          <!--<style>
-              #vertical-bar {
-                  border-left: 2px solid #ccc;
-                  width:3px;
-                  height:400px;
-              }
-          </style>
-
-          <div id="vertical-bar"></div>
-
-          <div class="container-options">
-             <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-              <h4 style=" margin:10px"> Control Múltiple </h4>
-              <div class="container-buttons">
-                  <div>
-                    <button md-button>ON</button>
-                  </div>
-                  <div>
-                    <button md-button>OFF</button>
-                  </div>
-                  <div>
-                      <md-slider min="0" max="100" step="5" thumbLabel tickInterval="1"></md-slider>
-                  </div>
-              </div>
-          </div>-->
-      </div>
-
-  </mat-tab>
-  <mat-tab label="Automàtic">
-      <div class="container-center">
-          <div class="container-programs" style="float:left ">
-              <div *ngFor="let program of data.programs | getKeys" class="icons">
-                  <app-program  [currentProgram]="data.programs[program]"
-                                  (click)="onProgram(data.programs[program].htmlQuery)">
-                  </app-program>
-              </div>
-          </div>
-      </div>
+<mat-tab-group style="min-height: calc(100vh - 134px);">
+    <mat-tab label="Manual">
+        <div class="container-outputs">
+            <div *ngFor="let device of data.conf | getKeys" class="icons">
+                <config-output *ngIf="data.conf[device].type != undefined"
+                    [currentDevice]="data.conf[device]"
+                    (click)="toggleLED(data.conf[device].outputPin)">
+                </config-output>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Automàtic">
+        <div class="container-outputs">
+            <div *ngFor="let program of data.programs | getKeys" class="icons">
+                <app-program  [currentProgram]="data.programs[program]"
+                    (click)="onProgram(data.programs[program].htmlQuery)">
+                </app-program>
+            </div>
+        </div>
     </mat-tab>
 </mat-tab-group>

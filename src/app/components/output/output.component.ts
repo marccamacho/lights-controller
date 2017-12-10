@@ -9,9 +9,9 @@ import { OutputDevice }         from '../../classes/output-device'
 })
 
 export class OutputComponent implements OnInit {
-    currentColor: string;
+    currentColor : string;
 
-    @Input () currentDevice: OutputDevice;
+    @Input () currentDevice: OutputDevice = {typeTag:"LED", outputPin:"A13", name:"PIN:", description:"hola què tal?", active:false};
     @Input () changeColor: boolean = true;
 
     constructor() {
@@ -22,10 +22,19 @@ export class OutputComponent implements OnInit {
       console.log(this.currentDevice);
     }
 
+    ngOnChange() {
+      console.log(this.currentDevice);
+    }
+
     toggleColor() {
+        console.log("Change color")
         if (this.changeColor) {
-            if (this.currentDevice.active)   return "active";
-            else                             return "inactive";
-        } else return "inactive"
+            if (this.currentColor == "rgba(0, 0, 0, 0.54)"){
+                this.currentColor = "rgba(43, 189, 126, 0.54)";
+            }
+            else{
+                this.currentColor = "rgba(0, 0, 0, 0.54)";
+            }
+        }
     }
 }
