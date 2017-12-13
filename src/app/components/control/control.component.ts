@@ -33,7 +33,6 @@ export class ControlComponent implements OnInit {
 
     toggleLED(pin){
         if (!this.dataService.dataConfig.conf[pin].active) {      // Does not exist
-
             this.dataService.dataConfig.conf[pin].active = true;
 
             // Crida HTTP per engegar el LED que està en el PIN: <pin>
@@ -62,8 +61,9 @@ export class ControlComponent implements OnInit {
         }
     }
 
-    onProgram(crida){
-        console.log(crida)
+    onProgram(programname){
+        console.log(programname)
+        let crida  =  this.dataService.serverIP + "runprogram/" + programname;
         this.httpclient.get(crida)
             .subscribe(
                 (data) => {

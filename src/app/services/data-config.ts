@@ -9,7 +9,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class DataConfigService {
 
-    serverIP    : string = "http://lights-controller.local:5000/";  // Server IP
+    serverIP    : string = "http://192.168.0.1:5000/";  // Server IP
     dataConfig  : any;                                              // Configuration data in JSON format. See README.md.
     currentPage : string = "TAULA DE CONTROL";
     debug       : boolean = true;
@@ -21,21 +21,14 @@ export class DataConfigService {
         this.dataConfig = {
             "typeTags": ["LED"],
             "conf": {
-                 "33": {"active": false, "description": "Vermell", "outputPin": "33", "name": "Mig", "type": "LED"},
-                 "31": {"active": true, "description": "Dreta", "outputPin": "31", "name": "Dalt", "type": "LED"},
-                 "37": {"active": false, "description": "Vermell", "outputPin": "37", "name": "Mig", "type": "LED"},
-                 "29": {"active": false, "outputPin": "29", "description": "dreta", "name": "Baix", "type": "LED"},
-                 "35": {"active": false, "description": "Vermell", "outputPin": "29", "name": "Mig", "type": "LED"},
-                 "3": {"active": true, "outputPin": "3", "description": "Esquerre", "name": "Dalt", "type": "LED"},
-                 "5": {"active": false, "description": "Esquerre", "outputPin": "5", "name": "Baix", "type": "LED"},
-                 "7": {"active": false, "description": "Vermell", "outputPin": "7", "name": "Mig", "type": "LED"}},
-                 "programs": [
-                     {"htmlQuery": "http://lights-controller.local:5000/rafaga?pins=3&pins=5&pins=7&pins=29&pins=31&delay=0.5&times=20", "name": "Rafaga", "description": "Rafaga senzilla"},
-                     {"htmlQuery": "http://lights-controller.local:5000/circular?delay=0.5&times=5", "name": "Circular", "description": "Circular senzill"},
-                     {"htmlQuery": "http://lights-controller.local:5000/off?pins=3&pins=5&pins=7&pins=29&pins=31", "name": "Apaga tots", "description": "Apaga tots"},
-                     {"htmlQuery": "http://lights-controller.local:5000/on?pins=3&pins=5&pins=7&pins=29&pins=31", "name": "Engega tots", "description": "Engega tots"},
-                     {"htmlQuery": "http://lights-controller.local:5000/updown?delay=0.25&times=5", "name": "Engega tots", "description": "Engega tots"}
-                 ]
+                 "33":  {"active": false, "description": "Vermell", "outputPin": "33", "name": "Mig", "type": "LED"},
+                 "31":  {"active": false, "description": "Dreta", "outputPin": "31", "name": "Dalt", "type": "LED"},
+                 "37":  {"active": false, "description": "Vermell", "outputPin": "37", "name": "Mig", "type": "LED"},
+                 "29":  {"active": false, "outputPin": "29", "description": "dreta", "name": "Baix", "type": "LED"},
+                 "35":  {"active": false, "description": "Vermell", "outputPin": "29", "name": "Mig", "type": "LED"},
+                 "3":   {"active": false, "outputPin": "3", "description": "Esquerre", "name": "Dalt", "type": "LED"},
+                 "5":   {"active": false, "description": "Esquerre", "outputPin": "5", "name": "Baix", "type": "LED"},
+                 "7":   {"active": false, "description": "Vermell", "outputPin": "7", "name": "Mig", "type": "LED"}},
          };
     }
     // Get configuration JSON from server

@@ -528,7 +528,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/control/control.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-tab-group style=\"min-height: calc(100vh - 134px);\">\n    <mat-tab label=\"Manual\">\n        <div class=\"container-outputs\">\n            <div *ngFor=\"let device of data.conf | getKeys\" class=\"icons\">\n                <config-output *ngIf=\"data.conf[device].type != undefined\"\n                    [currentDevice]=\"data.conf[device]\"\n                    (click)=\"toggleLED(data.conf[device].outputPin)\">\n                </config-output>\n            </div>\n        </div>\n    </mat-tab>\n    <mat-tab label=\"Automàtic\">\n        <div class=\"container-outputs\">\n            <div *ngFor=\"let program of data.programs | getKeys\" class=\"icons\">\n                <app-program  [currentProgram]=\"data.programs[program]\"\n                    (click)=\"onProgram(data.programs[program].htmlQuery)\">\n                </app-program>\n            </div>\n        </div>\n    </mat-tab>\n</mat-tab-group>\n"
+module.exports = "<mat-tab-group style=\"min-height: calc(100vh - 134px);\">\n    <mat-tab label=\"Manual\">\n        <div class=\"container-outputs\">\n            <div *ngFor=\"let device of data.conf | getKeys\" class=\"icons\">\n                <config-output *ngIf=\"data.conf[device].type != undefined\"\n                    [currentDevice]=\"data.conf[device]\"\n                    (click)=\"toggleLED(data.conf[device].outputPin)\">\n                </config-output>\n            </div>\n        </div>\n    </mat-tab>\n    <mat-tab label=\"Automàtic\">\n        <div class=\"container-outputs\">\n            <div *ngFor=\"let program of data.programs | getKeys\" class=\"icons\">\n                <app-program  [currentProgram]=\"data.programs[program]\"\n                    (click)=\"onProgram(data.programs[program])\">\n                </app-program>\n            </div>\n        </div>\n    </mat-tab>\n</mat-tab-group>\n"
 
 /***/ }),
 
@@ -610,8 +610,9 @@ var ControlComponent = (function () {
             });
         }
     };
-    ControlComponent.prototype.onProgram = function (crida) {
-        console.log(crida);
+    ControlComponent.prototype.onProgram = function (programname) {
+        console.log(programname);
+        var crida = this.dataService.serverIP + "runprogram/" + programname;
         this.httpclient.get(crida)
             .subscribe(function (data) {
             console.log("Resposta rebuda");
@@ -836,7 +837,7 @@ var _a;
 /***/ "../../../../../src/app/components/output/output.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"custom-div\" *ngIf = \"currentDevice.type == 'LED'; else other_content\">\n    <p>\n        <svg [ngClass] = \"toggleColor()\" id=\"Objects\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 70.594 105.2785\"><title>LED</title><path  d=\"M435.152,96.6214a35.297,35.297,0,1,0-70.594,0,34.8358,34.8358,0,0,0,7.55579,21.7748,134.026,134.026,0,0,1,9.6457,14.033v21.467a3.53363,3.53363,0,0,0,3.5349,3.5336h4.0105v1.7103a7.46187,7.46187,0,0,0,7.462,7.462h6.1765a7.4617,7.4617,0,0,0,7.4618-7.462v-1.7103h4.0105a3.53386,3.53386,0,0,0,3.5351-3.5336V132.4585a131.76126,131.76126,0,0,1,9.6425-14.0609A34.83537,34.83537,0,0,0,435.152,96.6214Zm-40.41911,31.279-6.1118-26.6433,3.6715-2.263,4.5389,4.2676a1.83179,1.83179,0,0,0,1.325.4769,1.77441,1.77441,0,0,0,1.2533-.6422l3.9208-4.7802,2.285,4.464a1.76945,1.76945,0,0,0,1.5731.9613,1.74432,1.74432,0,0,0,.67631-0.1344l2.96879-1.2318-5.8567,25.5251h-10.2442Zm16.1492,7.0689v5.9291H388.828v-5.9291h22.05409ZM388.828,150.3619v-5.9293h22.05409v5.9293H388.828Zm23.58329-22.4615h-1.9986l6.6914-29.16a2.64958,2.64958,0,1,0-5.1653-1.1835l-0.1352.5871-3.7859,1.5737L405.25,94.3042a1.77345,1.77345,0,0,0-1.388-.9508,1.74046,1.74046,0,0,0-1.55251.6347l-4.4319,5.4031-4.1454-3.8982a1.77014,1.77014,0,0,0-2.1365-.2174l-3.8096,2.3437-0.0146-.0639a2.65222,2.65222,0,0,0-5.1699,1.1871l6.6931,29.1579h-1.9986a140.096,140.096,0,0,0-9.6324-13.8812,27.83507,27.83507,0,0,1-6.037-17.3978,28.2283,28.2283,0,1,1,56.4566,0,27.834,27.834,0,0,1-6.0399,17.4001A139.52658,139.52658,0,0,0,412.41129,127.9004Z\" transform=\"translate(-364.558 -61.3236)\"/></svg>\n    </p>\n    <p class=\"title\">{{currentDevice.name}}</p>\n    <p class=\"subtitle\">{{currentDevice.description}}</p>\n</div>\n\n<!-- <mat-template #other_content>\n    <p>\n        <img class =\"icon\" src='./assets/images/svg/ic_help_outline_black_24px.svg'  onmouseover=\"this.src='./assets/images/svg/ic_help_outline_black_24px.svg';\"  onmouseout=\"this.src='./assets/images/svg/ic_help_outline_black_24px.svg';\"/>\n    </p>\n    <p class=\"title\">{{currentDevice.name}}</p>\n    <p class=\"subtitle\">{{currentDevice.description}}</p>\n</mat-template> -->\n"
+module.exports = "\n<div class=\"custom-div\" *ngIf = \"currentDevice.type == 'LED' && currentDevice.active\">\n    <p>\n        <svg class = \"active\" id=\"Objects\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 70.594 105.2785\"><title>LED</title><path  d=\"M435.152,96.6214a35.297,35.297,0,1,0-70.594,0,34.8358,34.8358,0,0,0,7.55579,21.7748,134.026,134.026,0,0,1,9.6457,14.033v21.467a3.53363,3.53363,0,0,0,3.5349,3.5336h4.0105v1.7103a7.46187,7.46187,0,0,0,7.462,7.462h6.1765a7.4617,7.4617,0,0,0,7.4618-7.462v-1.7103h4.0105a3.53386,3.53386,0,0,0,3.5351-3.5336V132.4585a131.76126,131.76126,0,0,1,9.6425-14.0609A34.83537,34.83537,0,0,0,435.152,96.6214Zm-40.41911,31.279-6.1118-26.6433,3.6715-2.263,4.5389,4.2676a1.83179,1.83179,0,0,0,1.325.4769,1.77441,1.77441,0,0,0,1.2533-.6422l3.9208-4.7802,2.285,4.464a1.76945,1.76945,0,0,0,1.5731.9613,1.74432,1.74432,0,0,0,.67631-0.1344l2.96879-1.2318-5.8567,25.5251h-10.2442Zm16.1492,7.0689v5.9291H388.828v-5.9291h22.05409ZM388.828,150.3619v-5.9293h22.05409v5.9293H388.828Zm23.58329-22.4615h-1.9986l6.6914-29.16a2.64958,2.64958,0,1,0-5.1653-1.1835l-0.1352.5871-3.7859,1.5737L405.25,94.3042a1.77345,1.77345,0,0,0-1.388-.9508,1.74046,1.74046,0,0,0-1.55251.6347l-4.4319,5.4031-4.1454-3.8982a1.77014,1.77014,0,0,0-2.1365-.2174l-3.8096,2.3437-0.0146-.0639a2.65222,2.65222,0,0,0-5.1699,1.1871l6.6931,29.1579h-1.9986a140.096,140.096,0,0,0-9.6324-13.8812,27.83507,27.83507,0,0,1-6.037-17.3978,28.2283,28.2283,0,1,1,56.4566,0,27.834,27.834,0,0,1-6.0399,17.4001A139.52658,139.52658,0,0,0,412.41129,127.9004Z\" transform=\"translate(-364.558 -61.3236)\"/></svg>\n    </p>\n    <p class=\"title\">{{currentDevice.name}}</p>\n    <p class=\"subtitle\">{{currentDevice.description}}</p>\n</div>\n\n<div class=\"custom-div\" *ngIf = \"currentDevice.type == 'LED' && currentDevice.active === false\">\n    <p>\n        <svg class = \"inactive\" id=\"Objects\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 70.594 105.2785\"><title>LED</title><path  d=\"M435.152,96.6214a35.297,35.297,0,1,0-70.594,0,34.8358,34.8358,0,0,0,7.55579,21.7748,134.026,134.026,0,0,1,9.6457,14.033v21.467a3.53363,3.53363,0,0,0,3.5349,3.5336h4.0105v1.7103a7.46187,7.46187,0,0,0,7.462,7.462h6.1765a7.4617,7.4617,0,0,0,7.4618-7.462v-1.7103h4.0105a3.53386,3.53386,0,0,0,3.5351-3.5336V132.4585a131.76126,131.76126,0,0,1,9.6425-14.0609A34.83537,34.83537,0,0,0,435.152,96.6214Zm-40.41911,31.279-6.1118-26.6433,3.6715-2.263,4.5389,4.2676a1.83179,1.83179,0,0,0,1.325.4769,1.77441,1.77441,0,0,0,1.2533-.6422l3.9208-4.7802,2.285,4.464a1.76945,1.76945,0,0,0,1.5731.9613,1.74432,1.74432,0,0,0,.67631-0.1344l2.96879-1.2318-5.8567,25.5251h-10.2442Zm16.1492,7.0689v5.9291H388.828v-5.9291h22.05409ZM388.828,150.3619v-5.9293h22.05409v5.9293H388.828Zm23.58329-22.4615h-1.9986l6.6914-29.16a2.64958,2.64958,0,1,0-5.1653-1.1835l-0.1352.5871-3.7859,1.5737L405.25,94.3042a1.77345,1.77345,0,0,0-1.388-.9508,1.74046,1.74046,0,0,0-1.55251.6347l-4.4319,5.4031-4.1454-3.8982a1.77014,1.77014,0,0,0-2.1365-.2174l-3.8096,2.3437-0.0146-.0639a2.65222,2.65222,0,0,0-5.1699,1.1871l6.6931,29.1579h-1.9986a140.096,140.096,0,0,0-9.6324-13.8812,27.83507,27.83507,0,0,1-6.037-17.3978,28.2283,28.2283,0,1,1,56.4566,0,27.834,27.834,0,0,1-6.0399,17.4001A139.52658,139.52658,0,0,0,412.41129,127.9004Z\" transform=\"translate(-364.558 -61.3236)\"/></svg>\n    </p>\n    <p class=\"title\">{{currentDevice.name}}</p>\n    <p class=\"subtitle\">{{currentDevice.description}}</p>\n</div>\n"
 
 /***/ }),
 
@@ -878,26 +879,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var OutputComponent = (function () {
     function OutputComponent() {
-        this.currentDevice = { typeTag: "LED", outputPin: "A13", name: "PIN:", description: "hola què tal?", active: false };
         this.changeColor = true;
-        this.currentColor = "rgba(0, 0, 0, 0.54)";
     }
     OutputComponent.prototype.ngOnInit = function () {
         console.log(this.currentDevice);
     };
     OutputComponent.prototype.ngOnChange = function () {
         console.log(this.currentDevice);
-    };
-    OutputComponent.prototype.toggleColor = function () {
-        console.log("Change color");
-        if (this.changeColor) {
-            if (this.currentColor == "rgba(0, 0, 0, 0.54)") {
-                this.currentColor = "rgba(43, 189, 126, 0.54)";
-            }
-            else {
-                this.currentColor = "rgba(0, 0, 0, 0.54)";
-            }
-        }
     };
     return OutputComponent;
 }());
@@ -926,7 +914,7 @@ var _a;
 /***/ "../../../../../src/app/components/program/program.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"custom-div\" >\n    <p>\n          <i [ngClass] = \"toggleColor()\" class=\"material-icons program\">device_hub</i>\n    </p>\n    <p class=\"title\">{{currentProgram.name}}</p>\n</div>\n"
+module.exports = "\n<div class=\"custom-div\" >\n    <p>\n          <i [ngClass] = \"toggleColor()\" class=\"material-icons program\">device_hub</i>\n    </p>\n    <p class=\"title\">{{currentProgram}}</p>\n</div>\n"
 
 /***/ }),
 
@@ -1088,6 +1076,8 @@ var GetKeysPipe = (function () {
     function GetKeysPipe() {
     }
     GetKeysPipe.prototype.transform = function (value, args) {
+        if (value == undefined)
+            return [];
         return Object.keys(value); //.map(key => value[key]);
     };
     return GetKeysPipe;
@@ -1135,7 +1125,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var DataConfigService = (function () {
     function DataConfigService(httpclient) {
         this.httpclient = httpclient;
-        this.serverIP = "http://lights-controller.local:5000/"; // Server IP
+        this.serverIP = "http://192.168.0.1:5000/"; // Server IP
         this.currentPage = "TAULA DE CONTROL";
         this.debug = true;
     }
@@ -1144,21 +1134,14 @@ var DataConfigService = (function () {
             "typeTags": ["LED"],
             "conf": {
                 "33": { "active": false, "description": "Vermell", "outputPin": "33", "name": "Mig", "type": "LED" },
-                "31": { "active": true, "description": "Dreta", "outputPin": "31", "name": "Dalt", "type": "LED" },
+                "31": { "active": false, "description": "Dreta", "outputPin": "31", "name": "Dalt", "type": "LED" },
                 "37": { "active": false, "description": "Vermell", "outputPin": "37", "name": "Mig", "type": "LED" },
                 "29": { "active": false, "outputPin": "29", "description": "dreta", "name": "Baix", "type": "LED" },
                 "35": { "active": false, "description": "Vermell", "outputPin": "29", "name": "Mig", "type": "LED" },
-                "3": { "active": true, "outputPin": "3", "description": "Esquerre", "name": "Dalt", "type": "LED" },
+                "3": { "active": false, "outputPin": "3", "description": "Esquerre", "name": "Dalt", "type": "LED" },
                 "5": { "active": false, "description": "Esquerre", "outputPin": "5", "name": "Baix", "type": "LED" },
                 "7": { "active": false, "description": "Vermell", "outputPin": "7", "name": "Mig", "type": "LED" }
             },
-            "programs": [
-                { "htmlQuery": "http://lights-controller.local:5000/rafaga?pins=3&pins=5&pins=7&pins=29&pins=31&delay=0.5&times=20", "name": "Rafaga", "description": "Rafaga senzilla" },
-                { "htmlQuery": "http://lights-controller.local:5000/circular?delay=0.5&times=5", "name": "Circular", "description": "Circular senzill" },
-                { "htmlQuery": "http://lights-controller.local:5000/off?pins=3&pins=5&pins=7&pins=29&pins=31", "name": "Apaga tots", "description": "Apaga tots" },
-                { "htmlQuery": "http://lights-controller.local:5000/on?pins=3&pins=5&pins=7&pins=29&pins=31", "name": "Engega tots", "description": "Engega tots" },
-                { "htmlQuery": "http://lights-controller.local:5000/updown?delay=0.25&times=5", "name": "Engega tots", "description": "Engega tots" }
-            ]
         };
     };
     // Get configuration JSON from server
