@@ -1,0 +1,32 @@
+
+<h1 mat-dialog-title style="padding:10px;"> DETALLS DE CONFIGURACIÓ D'UNA SORTIDA </h1>
+
+<!-- NOM -->
+<div class="option-form mat-dialog-content">
+    <span class="placeh">Nom </span>
+    <mat-input-container style="width:60%">
+        <input  matInput
+                [maxlength]="9"
+                [value]="name"
+                [(ngModel)]="currentProgram.name"
+                name="name"
+                class="mat-input-element">
+    </mat-input-container>
+</div>
+
+<div class="option-form mat-dialog-content">
+    <span class="placeh">Número de pistes </span>
+    <mat-input-container style="width:60%">
+        <input  matInput
+                [maxlength]="1"
+                [value]="tracks"
+                [(ngModel)]="currentProgram.windowconf.tracks"
+                name="tracks"
+                class="mat-input-element">
+    </mat-input-container>
+</div>
+
+<!-- BOTONS D'ACCIÓ -->
+<button mat-button (click)="delete()" class="tbutton"> ELIMINAR </button>
+<button mat-button (click)="close()" id="cancel" class="tbutton"> CANCELAR </button>
+<button mat-button (click)="save()" class="flat tbutton"> DESAR </button>

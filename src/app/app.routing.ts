@@ -6,6 +6,7 @@ import { ConfigOutputsComponent }   from './components/config-outputs/config-out
 import { ProgramableComponent }     from './components/programable/programable.component';
 import { MakersComponent }          from './components/makers/makers.component';
 import { ControlComponent }         from './components/control/control.component';
+import { CreatorComponent }         from './components/creator/creator.component';
 
 // Configuración de las rutas
 const appRoutes: Routes = [
@@ -13,6 +14,7 @@ const appRoutes: Routes = [
     { path: 'outputs',      component: ConfigOutputsComponent },
     { path: 'makers',       component: MakersComponent },
     { path: 'develop',      component: ProgramableComponent},
+    { path: 'creator',      component: CreatorComponent},
     { path: '404',          redirectTo: ''},
     { path: '**',           redirectTo: ''}
 ];

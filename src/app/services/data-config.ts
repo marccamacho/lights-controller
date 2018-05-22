@@ -28,7 +28,23 @@ export class DataConfigService {
                  "35":  {"active": false, "description": "Vermell", "outputPin": "29", "name": "Mig", "type": "LED"},
                  "3":   {"active": false, "outputPin": "3", "description": "Esquerre", "name": "Dalt", "type": "LED"},
                  "5":   {"active": false, "description": "Esquerre", "outputPin": "5", "name": "Baix", "type": "LED"},
-                 "7":   {"active": false, "description": "Vermell", "outputPin": "7", "name": "Mig", "type": "LED"}},
+                 "7":   {"active": false, "description": "Vermell", "outputPin": "7", "name": "Mig", "type": "LED"}
+                },
+            "programs":[
+                {
+                     "name": "Program",
+                     "conf": {
+                        "33":  [],
+                        "31":  [],
+                        "37":  [],
+                        "29":  [],
+                        "35":  [],
+                        "3":   [],
+                        "5":   [],
+                        "7":   [],
+                     }
+                }
+            ]
          };
     }
     // Get configuration JSON from server

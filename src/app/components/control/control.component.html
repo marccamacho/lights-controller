@@ -10,12 +10,22 @@
         </div>
     </mat-tab>
     <mat-tab label="Automàtic">
-        <div class="container-outputs">
+        <div class="container-outputs" style="height:200px;">
             <div *ngFor="let program of data.programs | getKeys" class="icons">
                 <app-program  [currentProgram]="data.programs[program]"
-                    (click)="onProgram(data.programs[program])">
+                >
+                    <!-- 
+                        (click)="open(program)"  //Això no ho puc posar perquè el open no està
+                        adaptar a un programa ja creat.
+                        Per fer-ho, el component dialog ha de rebre per @Input la posició exacta en què està
+                        aquest programa creat, per després quan es vulgui guardar, es substitueixi el nou programa
+                        amb la seva versió antiga en la seva exacta posició
+                        
+                        (click)="onProgram(data.programs[program])">  -->
+                        
                 </app-program>
             </div>
         </div>
+        <button style="top:20px;"mat-fab (click)="open()"> <i class="material-icons">add</i> </button>
     </mat-tab>
 </mat-tab-group>

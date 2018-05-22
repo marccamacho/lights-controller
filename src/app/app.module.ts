@@ -5,6 +5,11 @@ import { Router }                   from '@angular/router';
 import { AppComponent }             from './app.component';
 import { HttpModule }               from '@angular/http';
 
+//Drag and drop
+import { NgDragDropModule } from 'ng-drag-drop';
+import { DragDropDirectiveModule} from "angular4-drag-drop";
+
+
 // Material Imports
 import { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
 import { MatSliderModule }          from '@angular/material/slider';
@@ -29,6 +34,8 @@ import 'hammerjs';
 import { OutputComponent }          from './components/output/output.component';
 import { ConfigOutputsComponent }   from './components/config-outputs/config-outputs.component';
 import { DialogConfigComponent }    from './components/config-outputs/config-outputs.component';
+import { DialogProgConfigComponent }    from './components/control/control.component';
+
 import { AppRoutingModule }         from './app.routing'; // Routing
 import { FooterComponent }          from './components/footer/footer.component';
 import { LoginComponent }           from './components/login/login.component';
@@ -42,7 +49,13 @@ import { DataConfigService }        from './services/data-config';
 
 // Pipes
 import { GetKeysPipe }              from './pipes/get-keys.pipe';
+
+//Other
 import { ProgramComponent } from './components/program/program.component';
+import { CreatorComponent } from './components/creator/creator.component';
+import { DropAreaComponent } from './components/creator/drop-area/drop-area.component';
+import { NavigationComponent } from './components/creator/navigation/navigation.component';
+import { GenericBoxModule } from './components/creator/generic-box/generic-box.module';
 
 export function init(dataConfig: DataConfigService) {
   return () => {
@@ -62,9 +75,14 @@ export function init(dataConfig: DataConfigService) {
     MakersComponent,
     ControlComponent,
     DialogConfigComponent,
+    DialogProgConfigComponent,
     GetKeysPipe,
     ButtonsControlComponent,
-    ProgramComponent
+    ProgramComponent,
+    CreatorComponent,
+    DropAreaComponent,
+    NavigationComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -76,9 +94,12 @@ export function init(dataConfig: DataConfigService) {
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    NgDragDropModule.forRoot(),
+    DragDropDirectiveModule,
+    GenericBoxModule
   ],
-  entryComponents: [ DialogConfigComponent ],
+  entryComponents: [ DialogConfigComponent, DialogProgConfigComponent ],
   providers: [
       DataConfigService,
       {

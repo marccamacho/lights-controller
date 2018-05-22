@@ -5,7 +5,12 @@ import { ProgramComponent }     from '../program/program.component'
 import { DataConfigService }    from '../../services/data-config';
 import { GetKeysPipe }          from '../../pipes/get-keys.pipe';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
-import 'rxjs/add/operator/timeout'
+import 'rxjs/add/operator/timeout';
+import { MatDialog, MatDialogRef }  from '@angular/material/dialog';
+
+import { NgDragDropModule } from 'ng-drag-drop';
+ 
+import { Routes, RouterModule, Router }     from '@angular/router';
 
 
 
@@ -17,10 +22,34 @@ import 'rxjs/add/operator/timeout'
 
 export class ControlComponent implements OnInit {
     outputs = [];           // Selected OUTPUTS
+
     resultsHTTP :string[];
 
-    constructor(public dataService: DataConfigService, private httpclient: Http, public snackBar: MatSnackBar) {
+    constructor(public dataService: DataConfigService, private httpclient: Http, public snackBar: MatSnackBar, public dialog: MatDialog) {
 
+    }
+
+    open(selectedProgram){
+        let dialogRef = this.dialog.open(DialogProgConfigComponent, {
+            width: '1400px',
+            height:'400px'
+        });
+
+        let instance = dialogRef.componentInstance;     // Instance of Dialog
+
+        instance.dataConfig = this.dataService.dataConfig;   // Input to Dialog
+
+        // Init object in DialogConfigComponent to solve errors modifying objects
+        if (selectedProgram == undefined){
+            selectedProgram = {type:"", outputPin:"", name:"", description:""};
+        }
+        /* instance.program = selectedProgram;
+        No sé per a qué serveix aquesta línia. 
+        instance.program no existeix, per tant, s'hauria de crear.
+        */
+        dialogRef.afterClosed().subscribe(result => {
+            this.dataService.putRemoteConfig();
+        });     
     }
 
     ngOnInit() {
@@ -82,4 +111,86 @@ export class ControlComponent implements OnInit {
         return this.dataService.dataConfig;
     }
 
+}
+
+
+@Component({
+    selector: 'dialog-config',
+    templateUrl: './dialog-config.html',
+    styleUrls: ['./dialog-config.scss']
+})
+export class DialogProgConfigComponent {
+
+    dataConfig: any;
+    lastestProgram:number;
+    currentProgram:any;
+
+    constructor(private router: Router, public dialogRef: MatDialogRef<any>, public dataService: DataConfigService, private httpclient: Http, public snackBar: MatSnackBar) {
+    }
+
+    ngOnInit(){
+        this.currentProgram = {
+            "name": "Program",
+            "conf": {
+                 "33":  [],
+                 "31":  [],
+                 "37":  [],
+                 "29":  [],
+                 "35":  [],
+                 "3":   [],
+                 "5":   [],
+                 "7":   [],
+            },
+            "windowconf": {
+                "tracks":0,
+                "state":false   //desactivat
+            }
+         };
+
+        for(var i = 0; i < this.data.programs; i++){
+            this.lastestProgram++;
+        }
+    }
+    save() {
+        console.log("worksman");
+        // this.data.programs[this.lastestProgram+1]==this.currentProgram;
+        this.data.programs.push(this.currentProgram);
+        console.log(this.data.programs);
+        
+        this.currentProgram= {
+            "name": "Program",
+            "conf": {
+                 "33":  [],
+                 "31":  [],
+                 "37":  [],
+                 "29":  [],
+                 "35":  [],
+                 "3":   [],
+                 "5":   [],
+                 "7":   [],
+            },
+            "windowconf": {
+                "tracks":0,
+                "state":true    //activat
+            }
+         };
+         this.router.navigate(['/creator']);
+         this.dialogRef.close();
+    }
+
+    close() {
+        this.dialogRef.close();
+    }
+
+    delete() {
+        /*this.dataConfig.conf[this.device.outputPin] = {};
+        
+        Com no sé on es guarda el programa, no el puc eliminar
+        */
+        this.close();
+    }
+
+    get data():any{
+        return this.dataService.dataConfig;
+    }
 }
