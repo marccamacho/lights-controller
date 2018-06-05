@@ -25,6 +25,17 @@
                 class="mat-input-element">
     </mat-input-container>
 </div>
+<div class="option-form mat-dialog-content">
+    <span class="placeh">Duració </span>
+    <mat-input-container style="width:60%">
+        <input  matInput
+                [maxlength]="4"
+                [value]="duration"
+                [(ngModel)]="currentProgram.windowconf.duration"
+                name="duration"
+                class="mat-input-element">
+    </mat-input-container>
+</div>
 
 <!-- BOTONS D'ACCIÓ -->
 <button mat-button (click)="delete()" class="tbutton"> ELIMINAR </button>

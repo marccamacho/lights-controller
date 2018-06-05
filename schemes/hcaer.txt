@@ -1,0 +1,23 @@
+
+- Se arraste el led a la linea de el tiempo
+- Cuando se deje alli, dropee, aparecerá un punto que representa el final del periodo. Este se podrá mover inmediatamente, será regulable.
+- Una vez de dropee el punto final, se creará automáticamente el periodo de tiempo. Este representa el tiempo en que el led esta encendido.
+- Cuando se clique en la barra, aparecerá un mini menú de 2 opciones: Editar (se podrá mover el punto final o el punto inicial) y Borrar
+
+- reconfigurar la configuracion de cada proyecto, añadir el numero de segundos de los tracks
+- acabar el drag & drop de los leds hacia los tracks
+- utilizar los sliders en los tracks, para poder mover los puntos
+- mostrar todos los sliders bien en el menú, y las opciones de editar cada uno.
+- poder guardar el proyecto, traspasarlo a un array con todos los segundos de todas los leds
+- poder ejecutar el proyecto, y que la rasp entienda el array (que a cada ciertos milisegundos pregunte si el led X tendria que estar encendido o apagado),
+  y ejecutar las acciones
+
+
+
+
+- como usar el drag and drop, para poder arrastrar el elemento a una track concreta. El drag and drop con componentes, o todo en un solo archivo HTML,
+o todoe en un solo componente?   De manera que cuando cliques en un elemento, se te active el modo slider, y el punto inicio y final como si fueran ,
+handles de los sliders.
+
+- como hacer los tracks. Los hacemos con jquery slides?, de esta manera, solo se puede representar una bombeta
+- como guardar todo en array

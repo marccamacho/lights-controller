@@ -1,0 +1,11 @@
+Entonces, queda así:
+
+- Drag and Drop:  Tengo que ver si voy a utilizar el drag and drop de los iconos, con todos los iconos en un solo componente, todo en un mismo HTML, o cada cosa en un componente diferente
+
+- Tracks: La principal opción es hacerlo todo con sliders de dos handles. De manera que cuando clicas en un elemento, se activa el modo editar del elemento y aparece el slider para movel el punto inicial o el final. Y entonces, se verían de fondo los otros elementos con su periodo, con un poco de transparencia (los pongo para poder hacerme una idea de donde estan).
+
+O hacer un rectangulo por cada elemento, el cual pueda redimensionar hacia la derecha o hacia la izquierda, para cambiar su periodo.
+
+Acordar también de poner las indicaciones de los segundos en el track. Hay que hacer la división entre el num total de pixels de el track entre el numero de segundos que dura el track, el programa.
+
+- Array:   Tengo que guardar todos los periodos en un array con todas las salidas, los leds, etc. En cada posición poner el elemento, con su segundo de inicio y de apagado. El programa después, tendrá que comprobar a cada cietros milisegundos, si cada bombilla deberia estar encendida o apagada (o hacer el toggle con los numeros que esten en cada posicion del array).

@@ -8,7 +8,6 @@ import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/timeout';
 import { MatDialog, MatDialogRef }  from '@angular/material/dialog';
 
-import { NgDragDropModule } from 'ng-drag-drop';
  
 import { Routes, RouterModule, Router }     from '@angular/router';
 
@@ -143,7 +142,8 @@ export class DialogProgConfigComponent {
             },
             "windowconf": {
                 "tracks":0,
-                "state":false   //desactivat
+                "actives":false,  //descativat
+                "duration":0
             }
          };
 
@@ -154,6 +154,7 @@ export class DialogProgConfigComponent {
     save() {
         console.log("worksman");
         // this.data.programs[this.lastestProgram+1]==this.currentProgram;
+        this.currentProgram.windowconf.active=true;
         this.data.programs.push(this.currentProgram);
         console.log(this.data.programs);
         
@@ -171,7 +172,8 @@ export class DialogProgConfigComponent {
             },
             "windowconf": {
                 "tracks":0,
-                "state":true    //activat
+                "active":false, //es desactiva la plantilla nova
+                "duration":0
             }
          };
          this.router.navigate(['/creator']);

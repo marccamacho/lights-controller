@@ -53,9 +53,6 @@ import { GetKeysPipe }              from './pipes/get-keys.pipe';
 //Other
 import { ProgramComponent } from './components/program/program.component';
 import { CreatorComponent } from './components/creator/creator.component';
-import { DropAreaComponent } from './components/creator/drop-area/drop-area.component';
-import { NavigationComponent } from './components/creator/navigation/navigation.component';
-import { GenericBoxModule } from './components/creator/generic-box/generic-box.module';
 
 export function init(dataConfig: DataConfigService) {
   return () => {
@@ -79,9 +76,7 @@ export function init(dataConfig: DataConfigService) {
     GetKeysPipe,
     ButtonsControlComponent,
     ProgramComponent,
-    CreatorComponent,
-    DropAreaComponent,
-    NavigationComponent,
+    CreatorComponent
 
   ],
   imports: [
@@ -97,7 +92,6 @@ export function init(dataConfig: DataConfigService) {
     HttpModule,
     NgDragDropModule.forRoot(),
     DragDropDirectiveModule,
-    GenericBoxModule
   ],
   entryComponents: [ DialogConfigComponent, DialogProgConfigComponent ],
   providers: [

@@ -42,6 +42,11 @@ export class DataConfigService {
                         "3":   [],
                         "5":   [],
                         "7":   [],
+                     },
+                     "windowconf": {
+                         "tracks":0,
+                         "active":false, //activat
+                         "duration":0
                      }
                 }
             ]
